@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>EPS Wellness</title>
+    <title>EPwellness</title>
 
     <style>
 
@@ -23,6 +23,12 @@
             background: #f7f8f4;
             color: #16372b;
             line-height: 1.5;
+        }
+
+        button,
+        textarea,
+        input {
+            font-family: inherit;
         }
 
         /* =========================
@@ -258,7 +264,7 @@
         }
 
         /* =========================
-           FEATURES
+           GENERAL SECTIONS
         ========================= */
 
         .section {
@@ -287,6 +293,10 @@
             color: #6b7972;
             font-size: 17px;
         }
+
+        /* =========================
+           FEATURES
+        ========================= */
 
         .feature-grid {
             display: grid;
@@ -397,8 +407,6 @@
             margin-bottom: 35px;
         }
 
-        /* Mood */
-
         .mood-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -427,8 +435,6 @@
             transform: translateY(-4px);
         }
 
-        /* Choices */
-
         .choice-grid {
             display: flex;
             justify-content: center;
@@ -453,8 +459,6 @@
             background: #e5f0e9;
             transform: translateY(-3px);
         }
-
-        /* Energy */
 
         .energy-box {
             max-width: 650px;
@@ -496,8 +500,6 @@
             margin-top: 28px;
         }
 
-        /* Text */
-
         .thought-box {
             width: 100%;
             max-width: 700px;
@@ -514,8 +516,6 @@
         .thought-box:focus {
             border-color: #7da991;
         }
-
-        /* Help */
 
         .help-grid {
             display: grid;
@@ -540,8 +540,6 @@
             background: #e5f0e9;
             transform: translateY(-3px);
         }
-
-        /* Summary */
 
         .summary-card {
             background: #f7f9f6;
@@ -632,6 +630,12 @@
 
         .goal-section {
             background: white;
+            max-width: none;
+        }
+
+        .goal-inner {
+            max-width: 1400px;
+            margin: auto;
         }
 
         .goal-grid {
@@ -652,7 +656,7 @@
             margin-bottom: 10px;
         }
 
-        .goal-card p {
+        .goal-card > p {
             color: #6b7972;
             margin-bottom: 25px;
         }
@@ -666,10 +670,127 @@
         .goal-pill {
             background: white;
             border: 1px solid #e1e7e2;
-            padding: 11px 16px;
+            padding: 13px 17px;
             border-radius: 25px;
             color: #496057;
             font-size: 13px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .goal-pill:hover {
+            transform: translateY(-2px);
+            border-color: #8bb39d;
+        }
+
+        .goal-pill.selected {
+            background: #174c38;
+            color: white;
+            border-color: #174c38;
+        }
+
+        .selected-goal {
+            margin-top: 25px;
+            padding: 18px;
+            border-radius: 20px;
+            background: #e3efe8;
+            display: none;
+        }
+
+        .selected-goal strong {
+            display: block;
+            color: #174c38;
+            margin-bottom: 4px;
+        }
+
+        .selected-goal span {
+            color: #607169;
+            font-size: 14px;
+        }
+
+        .step-list {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .goal-step {
+            width: 100%;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid #e2e8e3;
+            border-radius: 18px;
+            background: white;
+            cursor: pointer;
+            color: #40554c;
+            transition: 0.2s;
+        }
+
+        .goal-step:hover {
+            background: #edf4ef;
+        }
+
+        .goal-step-checkbox {
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            border: 2px solid #8bad9a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 13px;
+        }
+
+        .goal-step.completed {
+            background: #e3efe8;
+            border-color: #b5d0bf;
+            text-decoration: line-through;
+            color: #718178;
+        }
+
+        .goal-step.completed .goal-step-checkbox {
+            background: #174c38;
+            color: white;
+            border-color: #174c38;
+        }
+
+        .goal-progress {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .goal-progress-top {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #607169;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            height: 9px;
+            background: #dce7df;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: #174c38;
+            border-radius: 20px;
+            transition: width 0.3s;
+        }
+
+        .goal-message {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #4e876d;
+            display: none;
         }
 
         /* =========================
@@ -714,6 +835,90 @@
         .progress-stat span {
             color: #c8ddd2;
             font-size: 13px;
+        }
+
+        /* =========================
+           CHAT PREVIEW
+        ========================= */
+
+        .chat-preview {
+            background: #eef4ef;
+            padding: 110px 6%;
+        }
+
+        .chat-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .chat-copy h2 {
+            font-size: clamp(40px, 5vw, 60px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        .chat-copy p {
+            color: #68776f;
+            font-size: 17px;
+            max-width: 500px;
+        }
+
+        .chat-box {
+            background: white;
+            border-radius: 32px;
+            padding: 25px;
+            box-shadow: 0 20px 50px rgba(29,64,46,0.07);
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #edf0eb;
+            margin-bottom: 20px;
+        }
+
+        .chat-avatar {
+            width: 45px;
+            height: 45px;
+            background: #e3efe8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .chat-header strong {
+            display: block;
+        }
+
+        .chat-header span {
+            color: #7b887f;
+            font-size: 12px;
+        }
+
+        .chat-message {
+            background: #f3f7f4;
+            padding: 15px 17px;
+            border-radius: 18px 18px 18px 4px;
+            color: #506057;
+            font-size: 14px;
+            margin-bottom: 15px;
+            max-width: 85%;
+        }
+
+        .chat-disclaimer {
+            font-size: 11px;
+            color: #8a948e;
+            margin-top: 20px;
+            text-align: center;
         }
 
         /* =========================
@@ -799,6 +1004,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .chat-inner {
+                grid-template-columns: 1fr;
+            }
+
             footer {
                 flex-direction: column;
                 gap: 10px;
@@ -808,26 +1017,21 @@
     </style>
 </head>
 
-
 <body>
-
 
     <!-- NAVIGATION -->
 
     <nav>
 
         <div class="logo">
-            EPS Wellness
+            EPwellness
         </div>
 
         <div class="nav-links">
 
             <a href="#checkin">Check-In</a>
-
             <a href="#goals">Goals</a>
-
             <a href="#progress">Progress</a>
-
             <a href="#wellness">Wellness</a>
 
             <a href="#checkin" class="nav-cta">
@@ -854,7 +1058,7 @@
             </h1>
 
             <p class="hero-description">
-                EPS Wellness gives you a simple place to check in,
+                EPwellness gives you a simple place to check in,
                 understand how you're feeling, set goals, and take
                 small steps toward taking care of yourself.
             </p>
@@ -965,7 +1169,7 @@
             <p>
                 Your mental health, physical health, relationships,
                 routines, and goals can all affect how you feel.
-                EPS Wellness brings them together in one simple
+                EPwellness brings them together in one simple
                 place so you can check in and focus on what matters
                 to you.
             </p>
@@ -982,7 +1186,7 @@
         <div class="section-heading">
 
             <div class="eyebrow">
-                EXPLORE EPS WELLNESS
+                EXPLORE EPWELLNESS
             </div>
 
             <h2>
@@ -1083,7 +1287,6 @@
 
 
             <div class="checkin-box">
-
 
                 <!-- STEP 1 -->
 
@@ -1201,8 +1404,7 @@
 
                     <div class="energy-box">
 
-                        <div id="energy-number"
-                            class="energy-value">
+                        <div id="energy-number" class="energy-value">
                             5
                         </div>
 
@@ -1315,9 +1517,7 @@
                         class="thought-box"
                         placeholder="Type what's on your mind..."></textarea>
 
-
                     <br>
-
 
                     <button class="continue-button"
                         onclick="saveThoughts()">
@@ -1395,84 +1595,59 @@
                             Here's your check-in. 💚
                         </h3>
 
-
                         <div class="summary-item">
-
                             <div class="summary-label">
                                 How you're feeling
                             </div>
 
                             <div id="summary-mood"
-                                class="summary-value">
-                            </div>
-
+                                class="summary-value"></div>
                         </div>
 
-
                         <div class="summary-item">
-
                             <div class="summary-label">
                                 Your day
                             </div>
 
                             <div id="summary-day"
-                                class="summary-value">
-                            </div>
-
+                                class="summary-value"></div>
                         </div>
 
-
                         <div class="summary-item">
-
                             <div class="summary-label">
                                 Energy
                             </div>
 
                             <div id="summary-energy"
-                                class="summary-value">
-                            </div>
-
+                                class="summary-value"></div>
                         </div>
 
-
                         <div class="summary-item">
-
                             <div class="summary-label">
                                 What's affecting you
                             </div>
 
                             <div id="summary-reason"
-                                class="summary-value">
-                            </div>
-
+                                class="summary-value"></div>
                         </div>
 
-
                         <div class="summary-item">
-
                             <div class="summary-label">
                                 What's on your mind
                             </div>
 
                             <div id="summary-thoughts"
-                                class="summary-value">
-                            </div>
-
+                                class="summary-value"></div>
                         </div>
 
-
                         <div class="summary-item">
-
                             <div class="summary-label">
                                 What could help
                             </div>
 
                             <div id="summary-help"
-                                class="summary-value">
-                            </div>
-
+                                class="summary-value"></div>
                         </div>
-
 
                         <div class="focus-card">
 
@@ -1480,11 +1655,9 @@
                                 🎯 What should you focus on today?
                             </h4>
 
-                            <p id="focus-text">
-                            </p>
+                            <p id="focus-text"></p>
 
                         </div>
-
 
                         <div class="summary-actions">
 
@@ -1499,7 +1672,6 @@
                             </button>
 
                         </div>
-
 
                         <div id="saved-message"
                             class="saved-message">
@@ -1521,81 +1693,135 @@
 
     <section class="section goal-section" id="goals">
 
-        <div class="section-heading">
+        <div class="goal-inner">
 
-            <div class="eyebrow">
-                YOUR GOALS
-            </div>
+            <div class="section-heading">
 
-            <h2>
-                Small steps. Real progress.
-            </h2>
+                <div class="eyebrow">
+                    YOUR GOALS
+                </div>
 
-            <p>
-                Choose something you want to focus on and
-                turn it into manageable steps.
-            </p>
-
-        </div>
-
-
-        <div class="goal-grid">
-
-            <div class="goal-card">
-
-                <h3>
-                    What do you want to focus on?
-                </h3>
+                <h2>
+                    Small steps. Real progress.
+                </h2>
 
                 <p>
-                    Pick something that matters to you right now.
+                    Choose something you want to focus on and
+                    turn it into manageable steps.
                 </p>
 
-                <div class="goal-options">
+            </div>
 
-                    <div class="goal-pill">😴 Better sleep</div>
 
-                    <div class="goal-pill">🧠 Manage stress</div>
+            <div class="goal-grid">
 
-                    <div class="goal-pill">📚 School balance</div>
+                <!-- GOAL SELECTOR -->
 
-                    <div class="goal-pill">🌿 More downtime</div>
+                <div class="goal-card">
 
-                    <div class="goal-pill">🏃 Stay active</div>
+                    <h3>
+                        What do you want to focus on?
+                    </h3>
 
-                    <div class="goal-pill">💚 Self-care</div>
+                    <p>
+                        Pick something that matters to you right now.
+                    </p>
+
+
+                    <div class="goal-options">
+
+                        <button class="goal-pill"
+                            onclick="selectGoal('sleep', this)">
+                            😴 Better sleep
+                        </button>
+
+                        <button class="goal-pill"
+                            onclick="selectGoal('stress', this)">
+                            🧠 Manage stress
+                        </button>
+
+                        <button class="goal-pill"
+                            onclick="selectGoal('school', this)">
+                            📚 School balance
+                        </button>
+
+                        <button class="goal-pill"
+                            onclick="selectGoal('downtime', this)">
+                            🌿 More downtime
+                        </button>
+
+                        <button class="goal-pill"
+                            onclick="selectGoal('active', this)">
+                            🏃 Stay active
+                        </button>
+
+                        <button class="goal-pill"
+                            onclick="selectGoal('selfcare', this)">
+                            💚 Self-care
+                        </button>
+
+                    </div>
+
+
+                    <div id="selected-goal"
+                        class="selected-goal">
+
+                        <strong id="selected-goal-name"></strong>
+
+                        <span id="selected-goal-description"></span>
+
+                    </div>
 
                 </div>
 
-            </div>
+
+                <!-- GOAL STEPS -->
+
+                <div class="goal-card">
+
+                    <h3>
+                        Today's small steps
+                    </h3>
+
+                    <p id="steps-description">
+                        Choose a goal to see some manageable steps.
+                    </p>
 
 
-            <div class="goal-card">
+                    <div id="step-list"
+                        class="step-list">
 
-                <h3>
-                    Today's small steps
-                </h3>
-
-                <p>
-                    You don't have to do everything at once.
-                </p>
-
-                <div class="goal-options">
-
-                    <div class="goal-pill">
-                        ○ Choose one priority
                     </div>
 
-                    <div class="goal-pill">
-                        ○ Take a real break
-                    </div>
 
-                    <div class="goal-pill">
-                        ○ Check in with yourself
-                    </div>
+                    <div id="goal-progress"
+                        class="goal-progress">
 
-                    <div class="goal-pill">
-                        ○ Do something you enjoy
+                        <div class="goal-progress-top">
+
+                            <span>
+                                Your progress
+                            </span>
+
+                            <span id="goal-progress-text">
+                                0 / 0
+                            </span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div id="progress-fill"
+                                class="progress-fill">
+                            </div>
+
+                        </div>
+
+                        <div id="goal-message"
+                            class="goal-message">
+                            🎉 Nice work! You completed your small steps.
+                        </div>
+
                     </div>
 
                 </div>
@@ -1626,12 +1852,12 @@
 
                 <div class="progress-stat">
 
-                    <strong>
+                    <strong id="checkin-count">
                         0
                     </strong>
 
                     <span>
-                        Check-ins this week
+                        Check-ins completed
                     </span>
 
                 </div>
@@ -1639,12 +1865,12 @@
 
                 <div class="progress-stat">
 
-                    <strong>
+                    <strong id="goal-count">
                         0
                     </strong>
 
                     <span>
-                        Goals completed
+                        Goal steps completed
                     </span>
 
                 </div>
@@ -1652,14 +1878,88 @@
 
                 <div class="progress-stat">
 
-                    <strong>
+                    <strong id="average-energy">
                         —
                     </strong>
 
                     <span>
-                        Average energy
+                        Latest energy
                     </span>
 
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI WELLNESS PREVIEW -->
+
+    <section class="chat-preview">
+
+        <div class="chat-inner">
+
+            <div class="chat-copy">
+
+                <div class="eyebrow">
+                    COMING NEXT
+                </div>
+
+                <h2>
+                    Sometimes you just need to talk.
+                </h2>
+
+                <p>
+                    EPwellness will eventually include a supportive
+                    AI wellness companion where you can put your
+                    thoughts into words, reflect on your day, and
+                    talk things through.
+                </p>
+
+            </div>
+
+
+            <div class="chat-box">
+
+                <div class="chat-header">
+
+                    <div class="chat-avatar">
+                        💚
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            EPwellness
+                        </strong>
+
+                        <span>
+                            Wellness companion
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chat-message">
+                    Hey! I'm here to listen. What's been on your
+                    mind today?
+                </div>
+
+
+                <div class="chat-message">
+                    You don't have to have the perfect words.
+                    You can just start wherever feels easiest.
+                </div>
+
+
+                <div class="chat-disclaimer">
+                    This feature is designed as a wellness support
+                    tool, not as a replacement for a therapist or
+                    other professional support.
                 </div>
 
             </div>
@@ -1693,7 +1993,7 @@
     <footer>
 
         <strong>
-            EPS Wellness
+            EPwellness
         </strong>
 
         <span>
@@ -1706,6 +2006,10 @@
     <!-- JAVASCRIPT -->
 
     <script>
+
+        /* =========================
+           CHECK-IN
+        ========================= */
 
         let selectedMood = "";
         let selectedDay = "";
@@ -1906,7 +2210,7 @@
 
                 day: selectedDay,
 
-                energy: selectedEnergy,
+                energy: Number(selectedEnergy),
 
                 reason: selectedReason,
 
@@ -1922,9 +2226,23 @@
 
 
             localStorage.setItem(
-                "epsWellnessCheckin",
+                "epWellnessCheckin",
                 JSON.stringify(checkin)
             );
+
+
+            let count =
+                Number(localStorage.getItem("epWellnessCheckinCount") || 0);
+
+            count++;
+
+            localStorage.setItem(
+                "epWellnessCheckinCount",
+                count
+            );
+
+
+            updateProgress();
 
 
             document.getElementById("saved-message").style.display =
@@ -1952,6 +2270,393 @@
             showStep("step1");
 
         }
+
+
+        /* =========================
+           GOALS
+        ========================= */
+
+        const goalData = {
+
+            sleep: {
+                name: "😴 Better sleep",
+                description: "Create a calmer routine that gives you time to recharge.",
+                steps: [
+                    "Put away your phone for a little while before bed.",
+                    "Give yourself some quiet time to wind down.",
+                    "Try to keep a consistent bedtime tonight.",
+                    "Do something calming before getting into bed."
+                ]
+            },
+
+            stress: {
+                name: "🧠 Manage stress",
+                description: "Give yourself small moments of space when things feel busy.",
+                steps: [
+                    "Take five slow breaths.",
+                    "Write down one thing that's on your mind.",
+                    "Take a short break from what you're doing.",
+                    "Choose one thing you can handle right now."
+                ]
+            },
+
+            school: {
+                name: "📚 School balance",
+                description: "Break schoolwork into smaller pieces while making room for yourself.",
+                steps: [
+                    "Choose one school priority for today.",
+                    "Break a large assignment into smaller steps.",
+                    "Take a real break between tasks.",
+                    "Give yourself credit for what you finished."
+                ]
+            },
+
+            downtime: {
+                name: "🌿 More downtime",
+                description: "Make intentional space for rest and things you enjoy.",
+                steps: [
+                    "Set aside a few minutes just for yourself.",
+                    "Do something you genuinely enjoy.",
+                    "Take a break without feeling like you need to be productive.",
+                    "Spend a little time away from screens."
+                ]
+            },
+
+            active: {
+                name: "🏃 Stay active",
+                description: "Add comfortable movement into your day in a way that feels good.",
+                steps: [
+                    "Take a short walk or stretch.",
+                    "Move around during a study break.",
+                    "Choose an activity you enjoy.",
+                    "Give yourself time to rest when you need it."
+                ]
+            },
+
+            selfcare: {
+                name: "💚 Self-care",
+                description: "Make a little time for the things that help you feel cared for.",
+                steps: [
+                    "Check in with how you're feeling.",
+                    "Do one small thing that makes you happy.",
+                    "Take a few minutes to slow down.",
+                    "Reach out to someone you trust if you'd like company."
+                ]
+            }
+
+        };
+
+
+        let currentGoal = "";
+
+
+        function selectGoal(goal, button) {
+
+            currentGoal = goal;
+
+
+            document.querySelectorAll(".goal-pill").forEach(function(item) {
+
+                item.classList.remove("selected");
+
+            });
+
+
+            button.classList.add("selected");
+
+
+            const data = goalData[goal];
+
+
+            document.getElementById("selected-goal").style.display =
+                "block";
+
+            document.getElementById("selected-goal-name").textContent =
+                data.name;
+
+            document.getElementById("selected-goal-description").textContent =
+                data.description;
+
+
+            document.getElementById("steps-description").textContent =
+                "Choose a small step below. You can come back and update your progress anytime.";
+
+
+            const stepList =
+                document.getElementById("step-list");
+
+
+            stepList.innerHTML = "";
+
+
+            data.steps.forEach(function(step, index) {
+
+                const button =
+                    document.createElement("button");
+
+                button.className = "goal-step";
+
+                button.setAttribute(
+                    "data-step",
+                    index
+                );
+
+                button.innerHTML = `
+                    <span class="goal-step-checkbox">○</span>
+                    <span>${step}</span>
+                `;
+
+
+                button.onclick = function() {
+
+                    toggleGoalStep(button);
+
+                };
+
+
+                stepList.appendChild(button);
+
+            });
+
+
+            stepList.style.display = "block";
+
+            document.getElementById("goal-progress").style.display =
+                "block";
+
+
+            loadGoalProgress();
+
+        }
+
+
+        function toggleGoalStep(button) {
+
+            button.classList.toggle("completed");
+
+
+            const checkbox =
+                button.querySelector(".goal-step-checkbox");
+
+
+            if (button.classList.contains("completed")) {
+
+                checkbox.textContent = "✓";
+
+            } else {
+
+                checkbox.textContent = "○";
+
+            }
+
+
+            saveGoalProgress();
+
+            updateGoalProgress();
+
+            updateProgress();
+
+        }
+
+
+        function saveGoalProgress() {
+
+            if (!currentGoal) return;
+
+
+            const completed = [];
+
+
+            document.querySelectorAll(".goal-step").forEach(function(step) {
+
+                if (step.classList.contains("completed")) {
+
+                    completed.push(
+                        Number(step.getAttribute("data-step"))
+                    );
+
+                }
+
+            });
+
+
+            const allGoals =
+                JSON.parse(
+                    localStorage.getItem("epWellnessGoals") || "{}"
+                );
+
+
+            allGoals[currentGoal] = completed;
+
+
+            localStorage.setItem(
+                "epWellnessGoals",
+                JSON.stringify(allGoals)
+            );
+
+        }
+
+
+        function loadGoalProgress() {
+
+            if (!currentGoal) return;
+
+
+            const allGoals =
+                JSON.parse(
+                    localStorage.getItem("epWellnessGoals") || "{}"
+                );
+
+
+            const completed =
+                allGoals[currentGoal] || [];
+
+
+            document.querySelectorAll(".goal-step").forEach(function(step) {
+
+                const number =
+                    Number(step.getAttribute("data-step"));
+
+
+                if (completed.includes(number)) {
+
+                    step.classList.add("completed");
+
+                    step.querySelector(
+                        ".goal-step-checkbox"
+                    ).textContent = "✓";
+
+                }
+
+            });
+
+
+            updateGoalProgress();
+
+        }
+
+
+        function updateGoalProgress() {
+
+            const steps =
+                document.querySelectorAll(".goal-step");
+
+
+            if (steps.length === 0) return;
+
+
+            let completed = 0;
+
+
+            steps.forEach(function(step) {
+
+                if (step.classList.contains("completed")) {
+
+                    completed++;
+
+                }
+
+            });
+
+
+            const total = steps.length;
+
+            const percentage =
+                Math.round((completed / total) * 100);
+
+
+            document.getElementById("goal-progress-text").textContent =
+                completed + " / " + total;
+
+
+            document.getElementById("progress-fill").style.width =
+                percentage + "%";
+
+
+            const message =
+                document.getElementById("goal-message");
+
+
+            if (completed === total) {
+
+                message.style.display = "block";
+
+            } else {
+
+                message.style.display = "none";
+
+            }
+
+        }
+
+
+        /* =========================
+           PROGRESS
+        ========================= */
+
+        function updateProgress() {
+
+            const checkinCount =
+                Number(
+                    localStorage.getItem(
+                        "epWellnessCheckinCount"
+                    ) || 0
+                );
+
+
+            document.getElementById("checkin-count").textContent =
+                checkinCount;
+
+
+            const allGoals =
+                JSON.parse(
+                    localStorage.getItem("epWellnessGoals") || "{}"
+                );
+
+
+            let completedGoals = 0;
+
+
+            Object.keys(allGoals).forEach(function(goal) {
+
+                completedGoals +=
+                    allGoals[goal].length;
+
+            });
+
+
+            document.getElementById("goal-count").textContent =
+                completedGoals;
+
+
+            const savedCheckin =
+                JSON.parse(
+                    localStorage.getItem(
+                        "epWellnessCheckin"
+                    ) || "null"
+                );
+
+
+            if (savedCheckin) {
+
+                document.getElementById("average-energy").textContent =
+                    savedCheckin.energy + "/10";
+
+            } else {
+
+                document.getElementById("average-energy").textContent =
+                    "—";
+
+            }
+
+        }
+
+
+        /* =========================
+           STARTUP
+        ========================= */
+
+        updateProgress();
 
     </script>
 
