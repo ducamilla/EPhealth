@@ -7,6 +7,7 @@
     <title>EPS Wellness</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -22,8 +23,6 @@
             background: #f7faf8;
             color: #18352a;
         }
-
-        /* NAVIGATION */
 
         nav {
             display: flex;
@@ -55,8 +54,6 @@
             padding: 12px 20px;
             border-radius: 25px;
         }
-
-        /* HERO */
 
         .hero {
             min-height: 650px;
@@ -141,6 +138,16 @@
             margin-bottom: 12px;
         }
 
+        .checkin-step {
+            display: none;
+        }
+
+        #step1 {
+            display: block;
+        }
+
+        /* MOODS */
+
         .mood-options {
             display: flex;
             justify-content: center;
@@ -167,13 +174,15 @@
             margin-top: 10px;
         }
 
-        .mood-button:hover {
-            transform: translateY(-6px);
+        .mood-button:hover,
+        .choice-button:hover,
+        .help-button:hover {
+            transform: translateY(-5px);
         }
 
-        /* REASONS */
+        /* GENERAL CHOICES */
 
-        .reason-options {
+        .choice-options {
             display: flex;
             justify-content: center;
             gap: 14px;
@@ -182,22 +191,82 @@
             margin: 0 auto;
         }
 
-        .reason-button {
+        .choice-button {
             border: none;
             border-radius: 20px;
             background: white;
-            padding: 18px 24px;
+            padding: 20px 28px;
             font-size: 16px;
             color: #365247;
             cursor: pointer;
             transition: 0.2s;
         }
 
-        .reason-button:hover {
-            transform: translateY(-4px);
+        /* ENERGY */
+
+        .energy-box {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
         }
 
-        /* HELP OPTIONS */
+        .energy-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: #174c38;
+            margin-bottom: 15px;
+        }
+
+        .energy-slider {
+            width: 100%;
+            cursor: pointer;
+            accent-color: #174c38;
+        }
+
+        .energy-labels {
+            display: flex;
+            justify-content: space-between;
+            color: #718078;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .next-button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #174c38;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* TEXT BOX */
+
+        .thought-box {
+            width: 100%;
+            max-width: 700px;
+            height: 170px;
+            padding: 20px;
+            border: none;
+            border-radius: 25px;
+            resize: none;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #365247;
+            outline: none;
+            box-shadow: 0 5px 20px rgba(30, 70, 50, 0.05);
+        }
+
+        .thought-box:focus {
+            outline: 2px solid #8bb9a2;
+        }
+
+        /* HELP */
 
         .help-options {
             display: grid;
@@ -218,51 +287,99 @@
             transition: 0.2s;
         }
 
-        .help-button:hover {
-            transform: translateY(-4px);
-        }
-
-        .continue-button {
-            margin-top: 35px;
-            padding: 15px 28px;
-            border: none;
-            border-radius: 30px;
-            background: #174c38;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        /* CHECK-IN STEPS */
-
-        .checkin-step {
-            display: none;
-        }
-
-        #step1 {
-            display: block;
-        }
-
         /* SUMMARY */
 
         .summary-card {
-            max-width: 650px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 40px;
+            padding: 45px;
             background: white;
             border-radius: 30px;
             box-shadow: 0 5px 25px rgba(30, 70, 50, 0.08);
+            text-align: left;
         }
 
         .summary-card h2 {
             margin-bottom: 25px;
+            text-align: center;
         }
 
-        .summary-text {
-            line-height: 1.8;
-            color: #60736a;
+        .summary-item {
+            padding: 18px 0;
+            border-bottom: 1px solid #e5eee9;
+        }
+
+        .summary-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .summary-title {
+            font-size: 13px;
+            color: #4d8b70;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .summary-value {
             font-size: 17px;
+            color: #365247;
+            line-height: 1.5;
+        }
+
+        .focus-box {
+            background: #eaf4ee;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 25px;
+        }
+
+        .focus-box h3 {
+            margin-bottom: 8px;
+            color: #174c38;
+        }
+
+        .focus-box p {
+            color: #60736a;
+            line-height: 1.5;
+        }
+
+        .summary-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .save-button,
+        .restart-button {
+            padding: 14px 22px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .save-button {
+            border: none;
+            background: #174c38;
+            color: white;
+        }
+
+        .restart-button {
+            border: 2px solid #174c38;
+            background: white;
+            color: #174c38;
+        }
+
+        .saved-message {
+            text-align: center;
+            color: #4d8b70;
+            font-size: 14px;
+            margin-top: 15px;
+            display: none;
         }
 
         /* FEATURES */
@@ -336,7 +453,7 @@
             line-height: 1.5;
         }
 
-        /* FINAL CTA */
+        /* CTA */
 
         .cta {
             margin: 40px 7% 80px;
@@ -410,7 +527,12 @@
             .cta h2 {
                 font-size: 34px;
             }
+
+            .summary-card {
+                padding: 30px 22px;
+            }
         }
+
     </style>
 </head>
 
@@ -488,7 +610,7 @@
             <div id="step1" class="checkin-step">
 
                 <div class="step-label">
-                    Step 1 of 3
+                    Step 1 of 6
                 </div>
 
                 <h2>
@@ -497,7 +619,7 @@
 
                 <p class="checkin-subtitle">
                     There is no right or wrong answer.
-                    Just choose what feels closest to how you're feeling.
+                    Choose what feels closest to how you're feeling.
                 </p>
 
                 <div class="mood-options">
@@ -532,49 +654,42 @@
             <div id="step2" class="checkin-step">
 
                 <div class="step-label">
-                    Step 2 of 3
+                    Step 2 of 6
                 </div>
 
                 <h2>
-                    What's affecting how you feel?
+                    How has your day been?
                 </h2>
 
                 <p class="checkin-subtitle">
-                    Choose the option that fits best.
+                    Think about how your day has felt so far.
                 </p>
 
-                <div class="reason-options">
+                <div class="choice-options">
 
-                    <button class="reason-button" onclick="chooseReason('School')">
-                        🏫 School
+                    <button class="choice-button"
+                        onclick="chooseDay('Really good ☀️')">
+                        ☀️ Really good
                     </button>
 
-                    <button class="reason-button" onclick="chooseReason('Family')">
-                        👨‍👩‍👧 Family
+                    <button class="choice-button"
+                        onclick="chooseDay('Pretty good 🌿')">
+                        🌿 Pretty good
                     </button>
 
-                    <button class="reason-button" onclick="chooseReason('Friends')">
-                        🧑‍🤝‍🧑 Friends
+                    <button class="choice-button"
+                        onclick="chooseDay('Just okay 😐')">
+                        😐 Just okay
                     </button>
 
-                    <button class="reason-button" onclick="chooseReason('Activities')">
-                        🎨 Activities
+                    <button class="choice-button"
+                        onclick="chooseDay('A little difficult 🌧️')">
+                        🌧️ A little difficult
                     </button>
 
-                    <button class="reason-button" onclick="chooseReason('Sleep')">
-                        😴 Sleep
-                    </button>
-
-                    <button class="reason-button" onclick="chooseReason('Stress')">
-                        🧠 Stress
-                    </button>
-
-                    <button class="reason-button" onclick="chooseReason('Something else')">
-                        ✨ Something else
-                    </button>
-
-                    <button class="reason-button" onclick="chooseReason('Not sure')">
-                        🤷 Not sure
+                    <button class="choice-button"
+                        onclick="chooseDay('Really difficult 💭')">
+                        💭 Really difficult
                     </button>
 
                 </div>
@@ -587,7 +702,147 @@
             <div id="step3" class="checkin-step">
 
                 <div class="step-label">
-                    Step 3 of 3
+                    Step 3 of 6
+                </div>
+
+                <h2>
+                    What's your energy level?
+                </h2>
+
+                <p class="checkin-subtitle">
+                    Move the slider to the number that feels right.
+                </p>
+
+                <div class="energy-box">
+
+                    <div id="energy-number" class="energy-number">
+                        5
+                    </div>
+
+                    <input
+                        type="range"
+                        min="1"
+                        max="10"
+                        value="5"
+                        class="energy-slider"
+                        id="energy-slider"
+                    >
+
+                    <div class="energy-labels">
+                        <span>Low energy</span>
+                        <span>Lots of energy</span>
+                    </div>
+
+                    <button class="next-button"
+                        onclick="chooseEnergy()">
+                        Continue →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 4 -->
+
+            <div id="step4" class="checkin-step">
+
+                <div class="step-label">
+                    Step 4 of 6
+                </div>
+
+                <h2>
+                    What's affecting how you feel?
+                </h2>
+
+                <p class="checkin-subtitle">
+                    Choose the option that fits best.
+                </p>
+
+                <div class="choice-options">
+
+                    <button class="choice-button"
+                        onclick="chooseReason('School')">
+                        🏫 School
+                    </button>
+
+                    <button class="choice-button"
+                        onclick="chooseReason('Family')">
+                        👨‍👩‍👧 Family
+                    </button>
+
+                    <button class="choice-button"
+                        onclick="chooseReason('Friends')">
+                        🧑‍🤝‍🧑 Friends
+                    </button>
+
+                    <button class="choice-button"
+                        onclick="chooseReason('Activities')">
+                        🎨 Activities
+                    </button>
+
+                    <button class="choice-button"
+                        onclick="chooseReason('Sleep')">
+                        😴 Sleep
+                    </button>
+
+                    <button class="choice-button"
+                        onclick="chooseReason('Stress')">
+                        🧠 Stress
+                    </button>
+
+                    <button class="choice-button"
+                        onclick="chooseReason('Something else')">
+                        ✨ Something else
+                    </button>
+
+                    <button class="choice-button"
+                        onclick="chooseReason('Not sure')">
+                        🤷 Not sure
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 5 -->
+
+            <div id="step5" class="checkin-step">
+
+                <div class="step-label">
+                    Step 5 of 6
+                </div>
+
+                <h2>
+                    What's on your mind?
+                </h2>
+
+                <p class="checkin-subtitle">
+                    Write anything you'd like to remember about today.
+                </p>
+
+                <textarea
+                    id="thoughts"
+                    class="thought-box"
+                    placeholder="Type what's on your mind..."></textarea>
+
+                <br>
+
+                <button class="next-button"
+                    onclick="saveThoughts()">
+                    Continue →
+                </button>
+
+            </div>
+
+
+            <!-- STEP 6 -->
+
+            <div id="step6" class="checkin-step">
+
+                <div class="step-label">
+                    Step 6 of 6
                 </div>
 
                 <h2>
@@ -635,26 +890,129 @@
             </div>
 
 
-            <!-- RESULTS -->
+            <!-- FINAL SUMMARY -->
 
             <div id="checkin-result" class="checkin-step">
 
                 <div class="summary-card">
 
                     <div class="step-label">
-                        Your Check-In
+                        Your Daily Check-In
                     </div>
 
                     <h2>
-                        Thanks for checking in. 💚
+                        Here's your check-in. 💚
                     </h2>
 
-                    <p id="summary" class="summary-text"></p>
 
-                    <button class="continue-button"
-                        onclick="restartCheckin()">
-                        Check In Again
-                    </button>
+                    <div class="summary-item">
+
+                        <div class="summary-title">
+                            How you're feeling
+                        </div>
+
+                        <div id="summary-mood"
+                            class="summary-value">
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <div class="summary-title">
+                            How your day has been
+                        </div>
+
+                        <div id="summary-day"
+                            class="summary-value">
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <div class="summary-title">
+                            Energy level
+                        </div>
+
+                        <div id="summary-energy"
+                            class="summary-value">
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <div class="summary-title">
+                            What's affecting you
+                        </div>
+
+                        <div id="summary-reason"
+                            class="summary-value">
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <div class="summary-title">
+                            What's on your mind
+                        </div>
+
+                        <div id="summary-thoughts"
+                            class="summary-value">
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <div class="summary-title">
+                            What could help
+                        </div>
+
+                        <div id="summary-help"
+                            class="summary-value">
+                        </div>
+
+                    </div>
+
+
+                    <div class="focus-box">
+
+                        <h3>
+                            🎯 What to focus on today
+                        </h3>
+
+                        <p id="focus-text">
+                        </p>
+
+                    </div>
+
+
+                    <div class="summary-buttons">
+
+                        <button class="save-button"
+                            onclick="saveCheckin()">
+                            💾 Save Check-In
+                        </button>
+
+                        <button class="restart-button"
+                            onclick="restartCheckin()">
+                            ↻ Start Another Check-In
+                        </button>
+
+                    </div>
+
+                    <div id="saved-message"
+                        class="saved-message">
+                        ✓ Your check-in has been saved on this device.
+                    </div>
 
                 </div>
 
@@ -665,7 +1023,7 @@
     </section>
 
 
-    <!-- WELLNESS AREAS -->
+    <!-- WELLNESS -->
 
     <section class="features" id="features">
 
@@ -803,7 +1161,7 @@
     </section>
 
 
-    <!-- FINAL CTA -->
+    <!-- CTA -->
 
     <section class="cta">
 
@@ -827,21 +1185,78 @@
     <script>
 
         let selectedMood = "";
+        let selectedDay = "";
+        let selectedEnergy = 5;
         let selectedReason = "";
+        let selectedThoughts = "";
+        let selectedHelp = "";
+
+
+        function showStep(stepNumber) {
+
+            const steps = [
+                "step1",
+                "step2",
+                "step3",
+                "step4",
+                "step5",
+                "step6",
+                "checkin-result"
+            ];
+
+            steps.forEach(function(step) {
+
+                document.getElementById(step).style.display = "none";
+
+            });
+
+            document.getElementById(stepNumber).style.display = "block";
+
+            window.scrollTo({
+                top: document.getElementById("checkin").offsetTop,
+                behavior: "smooth"
+            });
+
+        }
 
 
         function chooseMood(mood) {
 
             selectedMood = mood;
 
-            document.getElementById("step1").style.display = "none";
+            showStep("step2");
 
-            document.getElementById("step2").style.display = "block";
+        }
 
-            window.scrollTo({
-                top: document.getElementById("checkin").offsetTop,
-                behavior: "smooth"
-            });
+
+        function chooseDay(day) {
+
+            selectedDay = day;
+
+            showStep("step3");
+
+        }
+
+
+        const energySlider =
+            document.getElementById("energy-slider");
+
+        energySlider.addEventListener("input", function() {
+
+            selectedEnergy = this.value;
+
+            document.getElementById("energy-number").textContent =
+                this.value;
+
+        });
+
+
+        function chooseEnergy() {
+
+            selectedEnergy =
+                document.getElementById("energy-slider").value;
+
+            showStep("step4");
 
         }
 
@@ -850,42 +1265,148 @@
 
             selectedReason = reason;
 
-            document.getElementById("step2").style.display = "none";
+            showStep("step5");
 
-            document.getElementById("step3").style.display = "block";
+        }
 
-            window.scrollTo({
-                top: document.getElementById("checkin").offsetTop,
-                behavior: "smooth"
-            });
+
+        function saveThoughts() {
+
+            const thoughts =
+                document.getElementById("thoughts").value.trim();
+
+            if (thoughts === "") {
+
+                selectedThoughts =
+                    "Nothing written down today.";
+
+            } else {
+
+                selectedThoughts = thoughts;
+
+            }
+
+            showStep("step6");
+
+        }
+
+
+        function getFocusSuggestion() {
+
+            if (selectedEnergy <= 3) {
+
+                return "Give yourself some room to slow down. A short break, some rest, or a calming activity could be a good place to start.";
+
+            }
+
+            if (selectedReason === "School") {
+
+                return "Focus on one school task at a time. Breaking a bigger task into smaller steps can make the day feel more manageable.";
+
+            }
+
+            if (selectedReason === "Stress") {
+
+                return "Focus on creating a little space for yourself. Try a short break, slow breaths, or writing down what is on your mind.";
+
+            }
+
+            if (selectedReason === "Sleep") {
+
+                return "Focus on giving your body and mind some time to recharge. Rest and a calming routine can help you wind down.";
+
+            }
+
+            if (selectedReason === "Friends" ||
+                selectedReason === "Family") {
+
+                return "Focus on connection today. Consider talking with someone you trust or giving yourself some time with people who make you feel supported.";
+
+            }
+
+            if (selectedReason === "Activities") {
+
+                return "Focus on balance. Make time for the things you enjoy while also giving yourself time to rest.";
+
+            }
+
+            if (selectedEnergy >= 8) {
+
+                return "Use some of that energy for something meaningful to you. Pick one small goal and take the first step.";
+
+            }
+
+            return "Focus on one small thing you can do for yourself today. You don't have to figure everything out at once.";
 
         }
 
 
         function finishCheckin(help) {
 
-            document.getElementById("step3").style.display = "none";
+            selectedHelp = help;
 
-            document.getElementById("checkin-result").style.display = "block";
 
-            document.getElementById("summary").innerHTML =
-                "You said you're feeling <strong>" +
-                selectedMood +
-                "</strong>.<br><br>" +
+            document.getElementById("summary-mood").textContent =
+                selectedMood;
 
-                "You selected <strong>" +
-                selectedReason +
-                "</strong> as something affecting you.<br><br>" +
+            document.getElementById("summary-day").textContent =
+                selectedDay;
 
-                "One thing you thought might help is " +
-                "<strong>" +
-                help +
-                "</strong>.";
+            document.getElementById("summary-energy").textContent =
+                selectedEnergy + " / 10";
 
-            window.scrollTo({
-                top: document.getElementById("checkin").offsetTop,
-                behavior: "smooth"
-            });
+            document.getElementById("summary-reason").textContent =
+                selectedReason;
+
+            document.getElementById("summary-thoughts").textContent =
+                selectedThoughts;
+
+            document.getElementById("summary-help").textContent =
+                selectedHelp;
+
+            document.getElementById("focus-text").textContent =
+                getFocusSuggestion();
+
+
+            document.getElementById("saved-message").style.display =
+                "none";
+
+            showStep("checkin-result");
+
+        }
+
+
+        function saveCheckin() {
+
+            const checkinData = {
+
+                mood: selectedMood,
+
+                day: selectedDay,
+
+                energy: selectedEnergy,
+
+                reason: selectedReason,
+
+                thoughts: selectedThoughts,
+
+                help: selectedHelp,
+
+                focus: getFocusSuggestion(),
+
+                date: new Date().toLocaleDateString()
+
+            };
+
+
+            localStorage.setItem(
+                "epsWellnessCheckin",
+                JSON.stringify(checkinData)
+            );
+
+
+            document.getElementById("saved-message").style.display =
+                "block";
 
         }
 
@@ -893,16 +1414,21 @@
         function restartCheckin() {
 
             selectedMood = "";
+            selectedDay = "";
+            selectedEnergy = 5;
             selectedReason = "";
+            selectedThoughts = "";
+            selectedHelp = "";
 
-            document.getElementById("checkin-result").style.display = "none";
 
-            document.getElementById("step1").style.display = "block";
+            document.getElementById("thoughts").value = "";
 
-            window.scrollTo({
-                top: document.getElementById("checkin").offsetTop,
-                behavior: "smooth"
-            });
+            document.getElementById("energy-slider").value = 5;
+
+            document.getElementById("energy-number").textContent = 5;
+
+
+            showStep("step1");
 
         }
 
