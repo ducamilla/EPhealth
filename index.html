@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>EPwellness</title>
 
 <style>
@@ -34,9 +33,7 @@ button {
   cursor: pointer;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* NAV */
 
 nav {
   position: sticky;
@@ -46,7 +43,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 7%;
-  background: rgba(247, 248, 243, 0.94);
+  background: rgba(247,248,243,.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid #e4e9e2;
 }
@@ -74,15 +71,13 @@ nav {
   color: #18342b;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero {
   min-height: 78vh;
   padding: 90px 7%;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.1fr .9fr;
   align-items: center;
   gap: 70px;
 }
@@ -99,8 +94,8 @@ nav {
 .hero h1 {
   max-width: 820px;
   margin-top: 14px;
-  font-size: clamp(55px, 7vw, 100px);
-  line-height: 0.92;
+  font-size: clamp(55px,7vw,100px);
+  line-height: .92;
   letter-spacing: -6px;
 }
 
@@ -119,7 +114,7 @@ nav {
   background: #183f32;
   color: white;
   font-weight: 700;
-  transition: 0.2s;
+  transition: .2s;
 }
 
 .primary-btn:hover {
@@ -163,9 +158,7 @@ nav {
   font-size: 48px;
 }
 
-/* =========================
-   GENERAL SECTIONS
-========================= */
+/* GENERAL */
 
 section {
   padding: 100px 7%;
@@ -174,14 +167,12 @@ section {
 .section-title {
   max-width: 850px;
   margin: 12px 0 45px;
-  font-size: clamp(40px, 5vw, 70px);
-  line-height: 0.98;
+  font-size: clamp(40px,5vw,70px);
+  line-height: .98;
   letter-spacing: -4px;
 }
 
-/* =========================
-   CHECK-IN
-========================= */
+/* CHECK-IN */
 
 .checkin-section {
   background: white;
@@ -215,7 +206,7 @@ section {
   height: 100%;
   width: 16.67%;
   background: #6e9d83;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 .step {
@@ -234,7 +225,7 @@ section {
 
 .choice-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2,1fr);
   gap: 13px;
 }
 
@@ -245,7 +236,7 @@ section {
   background: white;
   color: #29473d;
   text-align: left;
-  transition: 0.2s;
+  transition: .2s;
 }
 
 .choice:hover {
@@ -349,9 +340,7 @@ input[type="range"] {
   font-weight: 700;
 }
 
-/* =========================
-   GOALS
-========================= */
+/* GOALS */
 
 .goals-section {
   background: #edf3ec;
@@ -368,7 +357,7 @@ input[type="range"] {
   max-width: 1000px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2,1fr);
   gap: 18px;
 }
 
@@ -378,7 +367,7 @@ input[type="range"] {
   border-radius: 26px;
   background: #f9fbf7;
   text-align: left;
-  transition: 0.2s;
+  transition: .2s;
 }
 
 .goal-card:hover {
@@ -447,41 +436,85 @@ input[type="range"] {
   white-space: nowrap;
 }
 
-.daily-action {
+/* NEW GOAL OPTIONS */
+
+.goal-options-title {
+  margin-top: 30px;
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+
+.goal-options {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
+
+.goal-option {
   display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-top: 28px;
-  padding: 20px;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 18px;
   border: 1px solid #dce4da;
-  border-radius: 20px;
-  transition: 0.2s;
+  border-radius: 18px;
+  background: #fafcf9;
+  text-align: left;
+  transition: .2s;
 }
 
-.daily-action:hover {
-  background: #f5f8f3;
+.goal-option:hover {
+  border-color: #82a792;
+  background: #f3f8f3;
 }
 
-.daily-action.completed {
-  border-color: #77a286;
+.goal-option.selected {
+  border: 2px solid #4f8065;
   background: #e5f0e7;
 }
 
-.action-check {
-  width: 27px;
-  height: 27px;
+.option-circle {
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid #a7b8ad;
   border-radius: 50%;
+  color: white;
+  font-size: 13px;
 }
 
-.daily-action.completed .action-check {
+.goal-option.selected .option-circle {
   border-color: #4f8065;
   background: #4f8065;
+}
+
+.option-text strong {
+  display: block;
+}
+
+.option-text span {
+  display: block;
+  margin-top: 3px;
+  color: #7a8b84;
+  font-size: 12px;
+}
+
+.complete-option-btn {
+  width: 100%;
+  margin-top: 22px;
+  padding: 15px;
+  border: 0;
+  border-radius: 999px;
+  background: #183f32;
   color: white;
+  font-weight: 700;
+}
+
+.complete-option-btn:disabled {
+  background: #cbd5ce;
+  cursor: not-allowed;
 }
 
 .goal-progress {
@@ -507,12 +540,10 @@ input[type="range"] {
   width: 0;
   height: 100%;
   background: #5f9072;
-  transition: 0.3s;
+  transition: .3s;
 }
 
-/* =========================
-   AI COMPANION
-========================= */
+/* AI */
 
 .ai-section {
   background: #f7f8f3;
@@ -535,7 +566,7 @@ input[type="range"] {
   border: 1px solid #e0e5de;
   border-radius: 34px;
   background: white;
-  box-shadow: 0 15px 50px rgba(32,59,47,0.07);
+  box-shadow: 0 15px 50px rgba(32,59,47,.07);
 }
 
 .ai-heading {
@@ -545,7 +576,7 @@ input[type="range"] {
 }
 
 .ai-heading h3 {
-  font-size: clamp(34px, 5vw, 58px);
+  font-size: clamp(34px,5vw,58px);
   line-height: 1;
   letter-spacing: -3px;
 }
@@ -564,7 +595,7 @@ input[type="range"] {
   border: 1px solid #dce3da;
   border-radius: 25px;
   background: #fbfcfa;
-  box-shadow: 0 8px 25px rgba(35,55,45,0.05);
+  box-shadow: 0 8px 25px rgba(35,55,45,.05);
 }
 
 .ai-search textarea {
@@ -664,9 +695,7 @@ input[type="range"] {
   text-align: center;
 }
 
-/* =========================
-   PROGRESS
-========================= */
+/* PROGRESS */
 
 .progress-section {
   background: #183f32;
@@ -685,7 +714,7 @@ input[type="range"] {
   max-width: 1000px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 18px;
 }
 
@@ -706,9 +735,7 @@ input[type="range"] {
   color: #b5c9bf;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
   display: flex;
@@ -720,9 +747,7 @@ footer {
   font-size: 13px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width:800px) {
 
@@ -737,6 +762,7 @@ footer {
 
   .choice-grid,
   .goal-grid,
+  .goal-options,
   .stats-grid {
     grid-template-columns: 1fr;
   }
@@ -767,10 +793,6 @@ footer {
 
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-
 <nav>
   <div class="logo">EPwellness</div>
 
@@ -783,14 +805,9 @@ footer {
 </nav>
 
 
-<!-- =========================
-     HERO
-========================= -->
-
 <header class="hero">
 
   <div>
-
     <div class="eyebrow">
       Your everyday wellness space
     </div>
@@ -810,7 +827,6 @@ footer {
     >
       Start a check-in →
     </button>
-
   </div>
 
   <div class="hero-card">
@@ -834,9 +850,7 @@ footer {
 </header>
 
 
-<!-- =========================
-     CHECK-IN
-========================= -->
+<!-- CHECK-IN -->
 
 <section class="checkin-section" id="checkin">
 
@@ -848,19 +862,13 @@ footer {
     How are you doing today?
   </div>
 
-
   <div class="checkin-card">
 
     <div id="checkinProgressArea">
 
       <div class="progress-top">
-        <span id="stepLabel">
-          Step 1 of 6
-        </span>
-
-        <span id="progressPercent">
-          17%
-        </span>
+        <span id="stepLabel">Step 1 of 6</span>
+        <span id="progressPercent">17%</span>
       </div>
 
       <div class="progress-line">
@@ -877,37 +885,27 @@ footer {
 
     <div class="step active" id="step1">
 
-      <h3>
-        How are you feeling today?
-      </h3>
+      <h3>How are you feeling today?</h3>
 
       <div class="choice-grid">
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'mood','Great 😊')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'mood','Great 😊')">
           Great 😊
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'mood','Good 🙂')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'mood','Good 🙂')">
           Good 🙂
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'mood','Okay 😐')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'mood','Okay 😐')">
           Okay 😐
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'mood','Not great 😕')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'mood','Not great 😕')">
           Not great 😕
         </button>
 
@@ -916,10 +914,7 @@ footer {
       <div class="step-buttons">
         <span></span>
 
-        <button
-          class="next-btn"
-          onclick="nextStep()"
-        >
+        <button class="next-btn" onclick="nextStep()">
           Continue →
         </button>
       </div>
@@ -931,44 +926,32 @@ footer {
 
     <div class="step" id="step2">
 
-      <h3>
-        How has your day been?
-      </h3>
+      <h3>How has your day been?</h3>
 
       <div class="choice-grid">
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'day','Really good')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'day','Really good')">
           Really good
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'day','Pretty good')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'day','Pretty good')">
           Pretty good
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'day','Just okay')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'day','Just okay')">
           Just okay
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'day','A little difficult')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'day','A little difficult')">
           A little difficult
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'day','Really difficult')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'day','Really difficult')">
           Really difficult
         </button>
 
@@ -976,17 +959,11 @@ footer {
 
       <div class="step-buttons">
 
-        <button
-          class="back-btn"
-          onclick="previousStep()"
-        >
+        <button class="back-btn" onclick="previousStep()">
           ← Back
         </button>
 
-        <button
-          class="next-btn"
-          onclick="nextStep()"
-        >
+        <button class="next-btn" onclick="nextStep()">
           Continue →
         </button>
 
@@ -999,14 +976,9 @@ footer {
 
     <div class="step" id="step3">
 
-      <h3>
-        What's your energy level?
-      </h3>
+      <h3>What's your energy level?</h3>
 
-      <div
-        class="energy-number"
-        id="energyValue"
-      >
+      <div class="energy-number" id="energyValue">
         5
       </div>
 
@@ -1025,17 +997,11 @@ footer {
 
       <div class="step-buttons">
 
-        <button
-          class="back-btn"
-          onclick="previousStep()"
-        >
+        <button class="back-btn" onclick="previousStep()">
           ← Back
         </button>
 
-        <button
-          class="next-btn"
-          onclick="nextStep()"
-        >
+        <button class="next-btn" onclick="nextStep()">
           Continue →
         </button>
 
@@ -1048,65 +1014,47 @@ footer {
 
     <div class="step" id="step4">
 
-      <h3>
-        What's affecting how you feel?
-      </h3>
+      <h3>What's affecting how you feel?</h3>
 
       <div class="choice-grid">
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'reason','School')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'reason','School')">
           School
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'reason','Family')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'reason','Family')">
           Family
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'reason','Friends')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'reason','Friends')">
           Friends
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'reason','Activities')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'reason','Activities')">
           Activities
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'reason','Sleep')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'reason','Sleep')">
           Sleep
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'reason','Stress')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'reason','Stress')">
           Stress
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'reason','Something else')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'reason','Something else')">
           Something else
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'reason','Not sure')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'reason','Not sure')">
           Not sure
         </button>
 
@@ -1114,17 +1062,11 @@ footer {
 
       <div class="step-buttons">
 
-        <button
-          class="back-btn"
-          onclick="previousStep()"
-        >
+        <button class="back-btn" onclick="previousStep()">
           ← Back
         </button>
 
-        <button
-          class="next-btn"
-          onclick="nextStep()"
-        >
+        <button class="next-btn" onclick="nextStep()">
           Continue →
         </button>
 
@@ -1137,9 +1079,7 @@ footer {
 
     <div class="step" id="step5">
 
-      <h3>
-        What's on your mind?
-      </h3>
+      <h3>What's on your mind?</h3>
 
       <textarea
         id="thoughts"
@@ -1148,17 +1088,11 @@ footer {
 
       <div class="step-buttons">
 
-        <button
-          class="back-btn"
-          onclick="previousStep()"
-        >
+        <button class="back-btn" onclick="previousStep()">
           ← Back
         </button>
 
-        <button
-          class="next-btn"
-          onclick="nextStep()"
-        >
+        <button class="next-btn" onclick="nextStep()">
           Continue →
         </button>
 
@@ -1171,51 +1105,37 @@ footer {
 
     <div class="step" id="step6">
 
-      <h3>
-        What could help right now?
-      </h3>
+      <h3>What could help right now?</h3>
 
       <div class="choice-grid">
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'help','Take a short break')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'help','Take a short break')">
           Take a short break
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'help','Slow breaths')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'help','Slow breaths')">
           Slow breaths
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'help','Write down what is on my mind')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'help','Write down what is on my mind')">
           Write down what's on my mind
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'help','Talk to someone I trust')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'help','Talk to someone I trust')">
           Talk to someone I trust
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'help','Break one task into smaller steps')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'help','Break one task into smaller steps')">
           Break one task into smaller steps
         </button>
 
-        <button
-          class="choice"
-          onclick="selectChoice(this,'help','Do something calming')"
-        >
+        <button class="choice"
+          onclick="selectChoice(this,'help','Do something calming')">
           Do something calming
         </button>
 
@@ -1223,17 +1143,11 @@ footer {
 
       <div class="step-buttons">
 
-        <button
-          class="back-btn"
-          onclick="previousStep()"
-        >
+        <button class="back-btn" onclick="previousStep()">
           ← Back
         </button>
 
-        <button
-          class="next-btn"
-          onclick="finishCheckin()"
-        >
+        <button class="next-btn" onclick="finishCheckin()">
           Finish check-in
         </button>
 
@@ -1244,75 +1158,46 @@ footer {
 
     <!-- SUMMARY -->
 
-    <div
-      class="summary"
-      id="summary"
-    >
+    <div class="summary" id="summary">
 
-      <h3>
-        Your check-in
-      </h3>
+      <h3>Your check-in</h3>
 
       <div class="summary-box">
-        <strong>
-          How you're feeling
-        </strong>
-
+        <strong>How you're feeling</strong>
         <span id="summaryMood"></span>
       </div>
 
       <div class="summary-box">
-        <strong>
-          Your day
-        </strong>
-
+        <strong>Your day</strong>
         <span id="summaryDay"></span>
       </div>
 
       <div class="summary-box">
-        <strong>
-          Energy
-        </strong>
-
+        <strong>Energy</strong>
         <span id="summaryEnergy"></span>/10
       </div>
 
       <div class="summary-box">
-        <strong>
-          What's affecting you
-        </strong>
-
+        <strong>What's affecting you</strong>
         <span id="summaryReason"></span>
       </div>
 
       <div class="summary-box">
-        <strong>
-          What's on your mind
-        </strong>
-
+        <strong>What's on your mind</strong>
         <span id="summaryThoughts"></span>
       </div>
 
       <div class="summary-box">
-        <strong>
-          What might help
-        </strong>
-
+        <strong>What might help</strong>
         <span id="summaryHelp"></span>
       </div>
 
       <div class="summary-box">
-        <strong>
-          A small focus for today
-        </strong>
-
+        <strong>A small focus for today</strong>
         <span id="summaryFocus"></span>
       </div>
 
-      <button
-        class="restart-btn"
-        onclick="startAgain()"
-      >
+      <button class="restart-btn" onclick="startAgain()">
         Start another check-in
       </button>
 
@@ -1323,14 +1208,9 @@ footer {
 </section>
 
 
-<!-- =========================
-     GOALS
-========================= -->
+<!-- GOALS -->
 
-<section
-  class="goals-section"
-  id="goals"
->
+<section class="goals-section" id="goals">
 
   <div class="section-label">
     02 — Goals
@@ -1341,174 +1221,101 @@ footer {
   </div>
 
   <p class="goals-intro">
-    Choose one area to focus on today.
-    You only need to complete one small action
-    to finish your goal.
+    Pick an area you'd like to work on, then choose the way
+    that feels most realistic for you today.
   </p>
 
 
   <div class="goal-grid">
 
-    <button
-      class="goal-card"
+    <button class="goal-card"
       data-goal="sleep"
-      onclick="chooseGoal('sleep',this)"
-    >
+      onclick="chooseGoal('sleep',this)">
       <div class="goal-icon">😴</div>
-
-      <h3>
-        Better sleep
-      </h3>
-
-      <p>
-        Create a calmer routine around sleep.
-      </p>
+      <h3>Better sleep</h3>
+      <p>Create a calmer routine around sleep.</p>
     </button>
 
-
-    <button
-      class="goal-card"
+    <button class="goal-card"
       data-goal="stress"
-      onclick="chooseGoal('stress',this)"
-    >
+      onclick="chooseGoal('stress',this)">
       <div class="goal-icon">🧠</div>
-
-      <h3>
-        Manage stress
-      </h3>
-
-      <p>
-        Give your mind a little more space.
-      </p>
+      <h3>Manage stress</h3>
+      <p>Give your mind a little more space.</p>
     </button>
 
-
-    <button
-      class="goal-card"
+    <button class="goal-card"
       data-goal="school"
-      onclick="chooseGoal('school',this)"
-    >
+      onclick="chooseGoal('school',this)">
       <div class="goal-icon">📚</div>
-
-      <h3>
-        School balance
-      </h3>
-
-      <p>
-        Make school feel a little more manageable.
-      </p>
+      <h3>School balance</h3>
+      <p>Make school feel a little more manageable.</p>
     </button>
 
-
-    <button
-      class="goal-card"
+    <button class="goal-card"
       data-goal="downtime"
-      onclick="chooseGoal('downtime',this)"
-    >
+      onclick="chooseGoal('downtime',this)">
       <div class="goal-icon">🌿</div>
-
-      <h3>
-        More downtime
-      </h3>
-
-      <p>
-        Make room for things that help you recharge.
-      </p>
+      <h3>More downtime</h3>
+      <p>Make room for things that help you recharge.</p>
     </button>
 
-
-    <button
-      class="goal-card"
+    <button class="goal-card"
       data-goal="active"
-      onclick="chooseGoal('active',this)"
-    >
+      onclick="chooseGoal('active',this)">
       <div class="goal-icon">🏃</div>
-
-      <h3>
-        Stay active
-      </h3>
-
-      <p>
-        Find a simple way to move your body.
-      </p>
+      <h3>Stay active</h3>
+      <p>Find a simple way to move your body.</p>
     </button>
 
-
-    <button
-      class="goal-card"
+    <button class="goal-card"
       data-goal="selfcare"
-      onclick="chooseGoal('selfcare',this)"
-    >
+      onclick="chooseGoal('selfcare',this)">
       <div class="goal-icon">💚</div>
-
-      <h3>
-        Self-care
-      </h3>
-
-      <p>
-        Do something kind for yourself today.
-      </p>
+      <h3>Self-care</h3>
+      <p>Do something kind for yourself today.</p>
     </button>
 
   </div>
 
 
-  <div
-    class="goal-details"
-    id="goalDetails"
-  >
+  <div class="goal-details" id="goalDetails">
 
     <div class="goal-details-top">
 
       <div>
-
         <h3 id="goalTitle"></h3>
-
         <p id="goalDescription"></p>
-
       </div>
 
-      <div
-        class="goal-status"
-        id="goalStatus"
-      >
-        Not completed
+      <div class="goal-status" id="goalStatus">
+        Choose an action
       </div>
 
     </div>
 
 
-    <div
-      class="daily-action"
-      id="dailyAction"
-      onclick="completeGoal()"
+    <h4 class="goal-options-title">
+      Choose one way to work toward this goal:
+    </h4>
+
+    <div class="goal-options" id="goalOptions"></div>
+
+    <button
+      class="complete-option-btn"
+      id="completeOptionBtn"
+      onclick="completeSelectedOption()"
+      disabled
     >
-
-      <div
-        class="action-check"
-        id="actionCheck"
-      ></div>
-
-      <div>
-
-        <strong id="actionText"></strong>
-
-        <p>
-          Tap this once you've done it.
-        </p>
-
-      </div>
-
-    </div>
+      Complete today's goal
+    </button>
 
 
     <div class="goal-progress">
 
       <div class="goal-progress-row">
 
-        <span>
-          Today's progress
-        </span>
+        <span>Today's progress</span>
 
         <span id="goalProgressText">
           0 / 1
@@ -1532,14 +1339,9 @@ footer {
 </section>
 
 
-<!-- =========================
-     AI COMPANION
-========================= -->
+<!-- AI -->
 
-<section
-  class="ai-section"
-  id="ai"
->
+<section class="ai-section" id="ai">
 
   <div class="section-label">
     03 — AI Companion
@@ -1549,14 +1351,12 @@ footer {
     A place to talk things through.
   </div>
 
-
   <div class="ai-wrap">
 
     <p class="ai-description">
       Ask a wellness question, describe what's been on your mind,
       or use one of the prompts below to get started.
     </p>
-
 
     <div class="ai-box">
 
@@ -1584,7 +1384,6 @@ footer {
         <button
           class="ai-send"
           onclick="sendAIMessage()"
-          aria-label="Send"
         >
           ↑
         </button>
@@ -1625,19 +1424,11 @@ footer {
       </div>
 
 
-      <div
-        class="chat"
-        id="chat"
-      ></div>
+      <div class="chat" id="chat"></div>
 
-
-      <div
-        class="typing"
-        id="typing"
-      >
+      <div class="typing" id="typing">
         Thinking...
       </div>
-
 
       <div class="chat-note">
         EPwellness AI is a supportive wellness companion,
@@ -1651,14 +1442,9 @@ footer {
 </section>
 
 
-<!-- =========================
-     PROGRESS
-========================= -->
+<!-- PROGRESS -->
 
-<section
-  class="progress-section"
-  id="progress"
->
+<section class="progress-section" id="progress">
 
   <div class="section-label">
     04 — Progress
@@ -1668,64 +1454,42 @@ footer {
     Keep track of the little things.
   </div>
 
-
   <div class="stats-grid">
 
     <div class="stat-card">
-
-      <div
-        class="stat-number"
-        id="checkinCount"
-      >
+      <div class="stat-number" id="checkinCount">
         0
       </div>
 
       <div class="stat-label">
         Check-ins completed
       </div>
-
     </div>
 
-
     <div class="stat-card">
-
-      <div
-        class="stat-number"
-        id="goalCount"
-      >
+      <div class="stat-number" id="goalCount">
         0
       </div>
 
       <div class="stat-label">
         Goals completed
       </div>
-
     </div>
 
-
     <div class="stat-card">
-
-      <div
-        class="stat-number"
-        id="latestEnergy"
-      >
+      <div class="stat-number" id="latestEnergy">
         —
       </div>
 
       <div class="stat-label">
         Latest energy level
       </div>
-
     </div>
 
   </div>
 
 </section>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
 
@@ -1745,7 +1509,7 @@ footer {
 <script>
 
 /* =========================
-   BASIC NAVIGATION
+   NAVIGATION
 ========================= */
 
 function scrollToSection(id) {
@@ -1834,15 +1598,12 @@ function showStep(number) {
 function nextStep() {
 
   if (currentStep === 5) {
-
     checkinData.thoughts =
       document.getElementById("thoughts").value;
   }
 
   if (currentStep < 6) {
-
     currentStep++;
-
     showStep(currentStep);
   }
 }
@@ -1851,9 +1612,7 @@ function nextStep() {
 function previousStep() {
 
   if (currentStep > 1) {
-
     currentStep--;
-
     showStep(currentStep);
   }
 }
@@ -1864,12 +1623,10 @@ function finishCheckin() {
   checkinData.thoughts =
     document.getElementById("thoughts").value;
 
-
   localStorage.setItem(
     "epWellnessCheckin",
     JSON.stringify(checkinData)
   );
-
 
   let count =
     Number(
@@ -1878,54 +1635,43 @@ function finishCheckin() {
       )
     ) || 0;
 
-
   count++;
-
 
   localStorage.setItem(
     "epWellnessCheckinCount",
     count
   );
 
-
   document.querySelectorAll(".step")
     .forEach(function(step) {
       step.classList.remove("active");
     });
 
-
   document.getElementById("checkinProgressArea")
     .style.display = "none";
 
-
   document.getElementById("summary")
     .classList.add("active");
-
 
   document.getElementById("summaryMood")
     .textContent =
     checkinData.mood || "Not selected";
 
-
   document.getElementById("summaryDay")
     .textContent =
     checkinData.day || "Not selected";
-
 
   document.getElementById("summaryEnergy")
     .textContent =
     checkinData.energy;
 
-
   document.getElementById("summaryReason")
     .textContent =
     checkinData.reason || "Not selected";
 
-
   document.getElementById("summaryThoughts")
     .textContent =
     checkinData.thoughts || "Nothing written";
-
 
   document.getElementById("summaryHelp")
     .textContent =
@@ -1935,38 +1681,28 @@ function finishCheckin() {
   let focus =
     "Take things one step at a time.";
 
-
   if (Number(checkinData.energy) <= 3) {
-
     focus =
       "Give yourself some space to slow down and recharge.";
   }
 
-
   if (checkinData.reason === "School") {
-
     focus =
       "Choose one school task and break it into a smaller step.";
   }
 
-
   if (checkinData.reason === "Stress") {
-
     focus =
       "Take a short pause before trying to solve everything at once.";
   }
 
-
   if (checkinData.reason === "Sleep") {
-
     focus =
       "Give yourself some quiet time and focus on getting enough rest.";
   }
 
-
   document.getElementById("summaryFocus")
     .textContent = focus;
-
 
   updateStats();
 }
@@ -1985,32 +1721,25 @@ function startAgain() {
     help: ""
   };
 
-
   document.getElementById("thoughts")
     .value = "";
-
 
   document.getElementById("energySlider")
     .value = 5;
 
-
   document.getElementById("energyValue")
     .textContent = "5";
-
 
   document.querySelectorAll(".choice")
     .forEach(function(choice) {
       choice.classList.remove("selected");
     });
 
-
   document.getElementById("summary")
     .classList.remove("active");
 
-
   document.getElementById("checkinProgressArea")
     .style.display = "block";
-
 
   showStep(1);
 }
@@ -2025,49 +1754,79 @@ const goals = {
   sleep: {
     title: "Better sleep",
     description:
-      "Create one small habit that can make your evenings calmer.",
-    action:
-      "Give yourself 20 quiet minutes before bed."
+      "Create a calmer routine around sleep.",
+    options: [
+      "Put my phone away 20 minutes before bed",
+      "Do something relaxing before bed",
+      "Get ready for bed a little earlier",
+      "Keep my room calm and comfortable",
+      "Try to keep a consistent bedtime"
+    ]
   },
 
   stress: {
     title: "Manage stress",
     description:
-      "Give your mind a little more space today.",
-    action:
-      "Take a 5-minute break and do something calming."
+      "Give your mind a little more space.",
+    options: [
+      "Take a 5-minute break",
+      "Write down what's bothering me",
+      "Take a few slow breaths",
+      "Do something calming",
+      "Talk to someone I trust"
+    ]
   },
 
   school: {
     title: "School balance",
     description:
-      "Make your schoolwork feel a little more manageable.",
-    action:
-      "Choose one school task and work on it for 15 minutes."
+      "Make school feel a little more manageable.",
+    options: [
+      "Work on one assignment for 15 minutes",
+      "Make a short to-do list",
+      "Start with the easiest task",
+      "Take a break between assignments",
+      "Ask someone for help if I need it"
+    ]
   },
 
   downtime: {
     title: "More downtime",
     description:
       "Make room for something that helps you recharge.",
-    action:
-      "Spend 20 minutes doing something you enjoy."
+    options: [
+      "Spend 20 minutes doing something I enjoy",
+      "Take a short break without schoolwork",
+      "Listen to music and relax",
+      "Spend some time outside",
+      "Put aside some time to do nothing"
+    ]
   },
 
   active: {
     title: "Stay active",
     description:
       "Find a simple way to add movement to your day.",
-    action:
-      "Take a short walk or stretch for 10 minutes."
+    options: [
+      "Take a short walk",
+      "Stretch for 10 minutes",
+      "Dance to a few songs",
+      "Do something active with a friend",
+      "Take a movement break during the day"
+    ]
   },
 
   selfcare: {
     title: "Self-care",
     description:
       "Do one small thing today that helps you feel cared for.",
-    action:
-      "Take 15 minutes to do something just for yourself."
+    options: [
+      "Spend time doing something I enjoy",
+      "Take a quiet break",
+      "Talk to someone I trust",
+      "Spend some time outside",
+      "Do something relaxing"
+    ]
   }
 
 };
@@ -2076,6 +1835,12 @@ const goals = {
 let selectedGoal =
   localStorage.getItem(
     "epWellnessSelectedGoal"
+  ) || "";
+
+
+let selectedGoalOption =
+  localStorage.getItem(
+    "epWellnessGoalOption"
   ) || "";
 
 
@@ -2089,29 +1854,31 @@ function chooseGoal(goalKey, button) {
 
   selectedGoal = goalKey;
 
-  completedGoal = false;
+  selectedGoalOption = "";
 
+  completedGoal = false;
 
   localStorage.setItem(
     "epWellnessSelectedGoal",
     selectedGoal
   );
 
+  localStorage.setItem(
+    "epWellnessGoalOption",
+    ""
+  );
 
   localStorage.setItem(
     "epWellnessGoalCompleted",
     "false"
   );
 
-
   document.querySelectorAll(".goal-card")
     .forEach(function(card) {
       card.classList.remove("selected");
     });
 
-
   button.classList.add("selected");
-
 
   showGoalDetails();
 }
@@ -2126,50 +1893,98 @@ function showGoalDetails() {
     return;
   }
 
-
   const goal =
     goals[selectedGoal];
-
 
   document.getElementById("goalDetails")
     .classList.add("active");
 
-
   document.getElementById("goalTitle")
     .textContent =
     goal.title;
-
 
   document.getElementById("goalDescription")
     .textContent =
     goal.description;
 
 
-  document.getElementById("actionText")
-    .textContent =
-    goal.action;
+  const optionsContainer =
+    document.getElementById("goalOptions");
+
+  optionsContainer.innerHTML = "";
+
+
+  goal.options.forEach(function(option, index) {
+
+    const optionButton =
+      document.createElement("button");
+
+    optionButton.className =
+      "goal-option";
+
+    optionButton.innerHTML = `
+      <div class="option-circle">
+        ${selectedGoalOption === String(index) ? "✓" : ""}
+      </div>
+
+      <div class="option-text">
+        <strong>${option}</strong>
+        <span>One way to work toward this goal</span>
+      </div>
+    `;
+
+    if (
+      selectedGoalOption === String(index)
+    ) {
+      optionButton.classList.add("selected");
+    }
+
+    optionButton.onclick = function() {
+      selectGoalOption(index);
+    };
+
+    optionsContainer.appendChild(optionButton);
+
+  });
 
 
   updateGoalProgress();
 }
 
 
-function completeGoal() {
+function selectGoalOption(index) {
 
-  if (!selectedGoal) {
+  if (completedGoal) {
     return;
   }
 
+  selectedGoalOption =
+    String(index);
 
-  completedGoal =
-    !completedGoal;
+  localStorage.setItem(
+    "epWellnessGoalOption",
+    selectedGoalOption
+  );
 
+  showGoalDetails();
+}
+
+
+function completeSelectedOption() {
+
+  if (
+    !selectedGoalOption ||
+    completedGoal
+  ) {
+    return;
+  }
+
+  completedGoal = true;
 
   localStorage.setItem(
     "epWellnessGoalCompleted",
-    completedGoal
+    "true"
   );
-
 
   updateGoalProgress();
 
@@ -2178,12 +1993,6 @@ function completeGoal() {
 
 
 function updateGoalProgress() {
-
-  const action =
-    document.getElementById("dailyAction");
-
-  const check =
-    document.getElementById("actionCheck");
 
   const status =
     document.getElementById("goalStatus");
@@ -2194,30 +2003,45 @@ function updateGoalProgress() {
   const progressFill =
     document.getElementById("goalProgressFill");
 
+  const completeButton =
+    document.getElementById("completeOptionBtn");
+
 
   if (completedGoal) {
 
-    action.classList.add("completed");
+    status.textContent =
+      "✓ Completed";
 
-    check.textContent = "✓";
+    progressText.textContent =
+      "1 / 1";
 
-    status.textContent = "Completed";
+    progressFill.style.width =
+      "100%";
 
-    progressText.textContent = "1 / 1";
+    completeButton.textContent =
+      "Goal completed ✓";
 
-    progressFill.style.width = "100%";
+    completeButton.disabled =
+      true;
 
   } else {
 
-    action.classList.remove("completed");
+    status.textContent =
+      selectedGoalOption
+        ? "Action selected"
+        : "Choose an action";
 
-    check.textContent = "";
+    progressText.textContent =
+      "0 / 1";
 
-    status.textContent = "Not completed";
+    progressFill.style.width =
+      "0%";
 
-    progressText.textContent = "0 / 1";
+    completeButton.textContent =
+      "Complete today's goal";
 
-    progressFill.style.width = "0%";
+    completeButton.disabled =
+      !selectedGoalOption;
   }
 }
 
@@ -2226,12 +2050,106 @@ function updateGoalProgress() {
    AI COMPANION
 ========================= */
 
+/*
+  This is a local demo AI.
+  It uses several possible responses for
+  each topic and chooses between them.
+*/
+
+const aiResponses = {
+
+  school: [
+    "School can feel like a lot when everything piles up. Try choosing one assignment to focus on first instead of thinking about everything at once.",
+    "It might help to make your schoolwork smaller. Pick one task, set aside a short amount of time, and just get started.",
+    "When school feels overwhelming, start with the thing that feels most doable. You don't have to finish everything right now.",
+    "Maybe give yourself a quick reset before going back to schoolwork. Then choose one small thing you can actually finish."
+  ],
+
+  stress: [
+    "It sounds like you could use a little breathing room. Try taking a short pause before deciding what to do next.",
+    "When everything feels like a lot, it can help to focus only on what needs your attention right now.",
+    "You don't have to solve every stressful thing at the same time. What's one part of it you could make a little easier?",
+    "A small reset might help. Step away for a few minutes, then come back and choose one next step."
+  ],
+
+  sleep: [
+    "If you're feeling tired, giving yourself a slower evening might help. Even a little quiet time before bed can create a better transition.",
+    "It could help to make your bedtime routine simple and predictable. Pick one relaxing thing you enjoy doing before bed.",
+    "If sleep has been difficult, think about what usually helps you wind down and try making space for that tonight.",
+    "Rest is important too. You don't need to be productive every minute of the day."
+  ],
+
+  friends: [
+    "Friend situations can take up a lot of mental space. It might help to give yourself time to figure out what you actually want to say.",
+    "If something happened with a friend, you don't have to react immediately. Taking a little time can help you decide what feels right.",
+    "Relationships can be complicated. If you're comfortable, talking with someone you trust might help you see the situation differently.",
+    "It sounds like this friendship is important to you. Think about what you need from the situation, not just what the other person might want."
+  ],
+
+  family: [
+    "Family situations can be complicated. If you're comfortable, talking with someone you trust may help you feel less alone with it.",
+    "Sometimes family stuff takes time to work through. You can focus on what you can control right now.",
+    "If things feel tense at home, giving yourself a little space can help before trying to have a difficult conversation.",
+    "You don't have to figure out a family situation all at once. One small step is enough for now."
+  ],
+
+  organization: [
+    "Let's make it simpler. Write down everything you need to do, then choose the one thing that matters most right now.",
+    "Try making a really short list with only three things. Once those are written down, decide which one you want to start with.",
+    "Organization doesn't have to mean planning your whole day. Even writing down your next step can make things feel clearer.",
+    "Pick one thing, give yourself a little time to work on it, and then decide what comes next."
+  ],
+
+  motivation: [
+    "You don't always need to feel motivated before starting. Sometimes starting with a really small action is what creates momentum.",
+    "Try making the goal smaller. Instead of thinking about the whole thing, choose one action that moves you a little closer.",
+    "If something feels difficult to start, give yourself permission to only work on it for a few minutes.",
+    "You don't have to do everything perfectly. Getting started is already progress."
+  ],
+
+  positive: [
+    "I'm glad you're having a good moment! It can be nice to notice what's making today feel better.",
+    "That's great to hear. Maybe take a second to appreciate what's going well instead of immediately moving on to the next thing.",
+    "I'm glad something is making your day feel good. Those little moments are worth noticing.",
+    "That sounds like a nice part of your day. Hold onto it and let yourself enjoy it."
+  ],
+
+  difficult: [
+    "I'm sorry you're having a difficult moment. You don't have to figure everything out immediately.",
+    "It sounds like today has been tough. For now, try focusing on what would make the next few minutes a little easier.",
+    "You can take things one step at a time. If there's someone you trust, talking with them could also help.",
+    "It's okay if today isn't going perfectly. You can give yourself some space and focus on one small next step."
+  ],
+
+  general: [
+    "Thanks for sharing that. What's the part of this that is taking up the most space in your mind?",
+    "That sounds worth thinking through. Try breaking it into one small next step instead of solving everything at once.",
+    "I hear you. You could start by asking yourself what you can control about the situation right now.",
+    "It might help to slow things down. What's one thing you wish felt easier right now?",
+    "You don't have to have the perfect answer immediately. Sometimes writing out what you're thinking can make things clearer."
+  ]
+
+};
+
+
+function getRandomResponse(list) {
+
+  const randomIndex =
+    Math.floor(
+      Math.random() * list.length
+    );
+
+  return list[randomIndex];
+}
+
+
 function useSuggestion(text) {
 
   const input =
     document.getElementById("aiInput");
 
-  input.value = text;
+  input.value =
+    text;
 
   input.focus();
 }
@@ -2256,24 +2174,18 @@ function addMessage(text, type) {
   const chat =
     document.getElementById("chat");
 
-
   const message =
     document.createElement("div");
-
 
   message.className =
     "message " + type;
 
-
   message.textContent =
     text;
 
-
   chat.appendChild(message);
 
-
   chat.classList.add("active");
-
 
   chat.scrollTop =
     chat.scrollHeight;
@@ -2285,28 +2197,22 @@ function sendAIMessage() {
   const input =
     document.getElementById("aiInput");
 
-
   const message =
     input.value.trim();
-
 
   if (!message) {
     return;
   }
-
 
   addMessage(
     message,
     "user-message"
   );
 
-
   input.value = "";
-
 
   const typing =
     document.getElementById("typing");
-
 
   typing.classList.add("active");
 
@@ -2315,10 +2221,8 @@ function sendAIMessage() {
 
     typing.classList.remove("active");
 
-
     const response =
       getAIResponse(message);
-
 
     addMessage(
       response,
@@ -2335,43 +2239,59 @@ function getAIResponse(message) {
     message.toLowerCase();
 
 
+  /*
+    Crisis/safety response.
+    The site does not give instructions for
+    self-harm or dangerous situations.
+  */
+
+  if (
+    lower.includes("hurt myself") ||
+    lower.includes("harm myself") ||
+    lower.includes("kill myself") ||
+    lower.includes("suicide")
+  ) {
+
+    return "I'm really sorry you're dealing with something this difficult. Please tell a trusted adult, parent, guardian, teacher, counselor, or another person who can be with you right now. If you feel like you might be in immediate danger, contact emergency services."
+  }
+
+
   if (
     lower.includes("school") ||
     lower.includes("homework") ||
     lower.includes("assignment") ||
-    lower.includes("class")
+    lower.includes("class") ||
+    lower.includes("test")
   ) {
 
-    return "That sounds like a lot to have on your mind. Try choosing just one school task to focus on first. What's the smallest part you could start with?";
+    return getRandomResponse(
+      aiResponses.school
+    );
   }
 
 
   if (
     lower.includes("stress") ||
     lower.includes("stressed") ||
-    lower.includes("overwhelmed")
+    lower.includes("overwhelmed") ||
+    lower.includes("anxious")
   ) {
 
-    return "It sounds like you could use a little breathing room. Try pausing for a few minutes and choosing one thing you can deal with right now instead of everything at once.";
-  }
-
-
-  if (
-    lower.includes("organized") ||
-    lower.includes("organization") ||
-    lower.includes("organize")
-  ) {
-
-    return "Let's make it simpler. Write down everything you need to do, then choose the one thing that matters most right now. You don't have to finish the entire list at once.";
+    return getRandomResponse(
+      aiResponses.stress
+    );
   }
 
 
   if (
     lower.includes("sleep") ||
-    lower.includes("tired")
+    lower.includes("tired") ||
+    lower.includes("bed")
   ) {
 
-    return "If you're feeling tired, it may help to slow down your evening. Try giving yourself some quiet time and focusing on getting enough rest.";
+    return getRandomResponse(
+      aiResponses.sleep
+    );
   }
 
 
@@ -2380,49 +2300,80 @@ function getAIResponse(message) {
     lower.includes("friends")
   ) {
 
-    return "Relationships can take up a lot of mental space. If something happened with a friend, it may help to slow down and think about what you want to say before reacting.";
+    return getRandomResponse(
+      aiResponses.friends
+    );
   }
 
 
   if (
     lower.includes("family") ||
-    lower.includes("parent")
+    lower.includes("parent") ||
+    lower.includes("mom") ||
+    lower.includes("dad")
   ) {
 
-    return "Family situations can be complicated. If you're comfortable, talking with someone you trust may help you feel less alone with what's going on.";
+    return getRandomResponse(
+      aiResponses.family
+    );
   }
 
 
   if (
-    lower.includes("sad") ||
-    lower.includes("upset") ||
-    lower.includes("bad")
+    lower.includes("organized") ||
+    lower.includes("organization") ||
+    lower.includes("organize") ||
+    lower.includes("schedule")
   ) {
 
-    return "I'm sorry you're having a difficult moment. You don't have to figure everything out immediately. Consider giving yourself some time to reset and talking with someone you trust.";
+    return getRandomResponse(
+      aiResponses.organization
+    );
+  }
+
+
+  if (
+    lower.includes("motivat") ||
+    lower.includes("can't start") ||
+    lower.includes("cant start")
+  ) {
+
+    return getRandomResponse(
+      aiResponses.motivation
+    );
   }
 
 
   if (
     lower.includes("happy") ||
     lower.includes("good") ||
-    lower.includes("excited")
+    lower.includes("excited") ||
+    lower.includes("great")
   ) {
 
-    return "I'm glad you're having a better moment. It can be nice to notice what's making today feel good and enjoy it without needing to make it complicated.";
+    return getRandomResponse(
+      aiResponses.positive
+    );
   }
 
 
   if (
-    lower.includes("goal") ||
-    lower.includes("motivat")
+    lower.includes("sad") ||
+    lower.includes("upset") ||
+    lower.includes("bad") ||
+    lower.includes("difficult") ||
+    lower.includes("rough")
   ) {
 
-    return "Try making the goal smaller. Instead of thinking about the whole thing, choose one action that would move you a little closer.";
+    return getRandomResponse(
+      aiResponses.difficult
+    );
   }
 
 
-  return "Thanks for sharing that. It might help to break what you're dealing with into one small next step. If you want, tell me a little more about what's going on.";
+  return getRandomResponse(
+    aiResponses.general
+  );
 }
 
 
@@ -2439,7 +2390,6 @@ function updateStats() {
       )
     ) || 0;
 
-
   document.getElementById("checkinCount")
     .textContent =
     checkins;
@@ -2449,7 +2399,6 @@ function updateStats() {
     localStorage.getItem(
       "epWellnessGoalCompleted"
     ) === "true";
-
 
   document.getElementById("goalCount")
     .textContent =
@@ -2468,7 +2417,6 @@ function updateStats() {
 
       const data =
         JSON.parse(saved);
-
 
       document.getElementById("latestEnergy")
         .textContent =
@@ -2511,7 +2459,6 @@ function loadSavedData() {
         '"]'
       );
 
-
     if (button) {
 
       button.classList.add("selected");
@@ -2527,4 +2474,4 @@ loadSavedData();
 </script>
 
 </body>
-</html>
+</html> 
