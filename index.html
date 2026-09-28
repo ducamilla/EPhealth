@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>EPS Wellness</title>
 
     <style>
@@ -12,11 +13,17 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: #f7faf8;
             color: #18352a;
         }
+
+        /* NAVIGATION */
 
         nav {
             display: flex;
@@ -24,6 +31,9 @@
             align-items: center;
             padding: 25px 7%;
             background: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .logo {
@@ -35,7 +45,7 @@
         nav a {
             text-decoration: none;
             color: #365247;
-            margin-left: 30px;
+            margin-left: 28px;
             font-size: 15px;
         }
 
@@ -46,8 +56,10 @@
             border-radius: 25px;
         }
 
+        /* HERO */
+
         .hero {
-            min-height: 600px;
+            min-height: 650px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -56,7 +68,7 @@
         }
 
         .hero-text {
-            max-width: 600px;
+            max-width: 620px;
         }
 
         .hero-text h1 {
@@ -96,64 +108,168 @@
             font-size: 120px;
         }
 
-        /* DAILY CHECK-IN */
+        /* CHECK-IN */
 
         .checkin {
-            padding: 90px 7%;
+            padding: 100px 7%;
             text-align: center;
             background: #eaf4ee;
         }
 
+        .checkin-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
         .checkin h2 {
-            font-size: 42px;
+            font-size: 44px;
             margin-bottom: 15px;
         }
 
-        .checkin > p {
+        .checkin-subtitle {
             color: #66776f;
             font-size: 18px;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
+        }
+
+        .step-label {
+            color: #4d8b70;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
 
         .mood-options {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
-        .mood-options button {
-            width: 140px;
-            height: 140px;
+        .mood-button {
+            width: 145px;
+            height: 145px;
             border: none;
-            border-radius: 25px;
+            border-radius: 28px;
             background: white;
-            font-size: 45px;
+            font-size: 48px;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: 0.2s;
+            box-shadow: 0 5px 20px rgba(30, 70, 50, 0.06);
         }
 
-        .mood-options button:hover {
-            transform: translateY(-5px);
-        }
-
-        .mood-options span {
+        .mood-button span {
             display: block;
             font-size: 16px;
             color: #365247;
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
-        #mood-result {
-            margin-top: 35px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #174c38;
+        .mood-button:hover {
+            transform: translateY(-6px);
         }
+
+        /* REASONS */
+
+        .reason-options {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .reason-button {
+            border: none;
+            border-radius: 20px;
+            background: white;
+            padding: 18px 24px;
+            font-size: 16px;
+            color: #365247;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .reason-button:hover {
+            transform: translateY(-4px);
+        }
+
+        /* HELP OPTIONS */
+
+        .help-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .help-button {
+            border: none;
+            border-radius: 20px;
+            background: white;
+            padding: 22px;
+            font-size: 16px;
+            color: #365247;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .help-button:hover {
+            transform: translateY(-4px);
+        }
+
+        .continue-button {
+            margin-top: 35px;
+            padding: 15px 28px;
+            border: none;
+            border-radius: 30px;
+            background: #174c38;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* CHECK-IN STEPS */
+
+        .checkin-step {
+            display: none;
+        }
+
+        #step1 {
+            display: block;
+        }
+
+        /* SUMMARY */
+
+        .summary-card {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 5px 25px rgba(30, 70, 50, 0.08);
+        }
+
+        .summary-card h2 {
+            margin-bottom: 25px;
+        }
+
+        .summary-text {
+            line-height: 1.8;
+            color: #60736a;
+            font-size: 17px;
+        }
+
+        /* FEATURES */
 
         .features {
             background: white;
-            padding: 90px 7%;
+            padding: 100px 7%;
         }
 
         .section-title {
@@ -189,8 +305,10 @@
             line-height: 1.6;
         }
 
+        /* HOW IT WORKS */
+
         .how {
-            padding: 90px 7%;
+            padding: 100px 7%;
             text-align: center;
         }
 
@@ -217,6 +335,8 @@
             color: #66776f;
             line-height: 1.5;
         }
+
+        /* FINAL CTA */
 
         .cta {
             margin: 40px 7% 80px;
@@ -248,6 +368,8 @@
             font-weight: bold;
         }
 
+        /* MOBILE */
+
         @media (max-width: 800px) {
 
             nav a {
@@ -273,7 +395,15 @@
                 grid-template-columns: 1fr;
             }
 
+            .help-options {
+                grid-template-columns: 1fr;
+            }
+
             .section-title {
+                font-size: 34px;
+            }
+
+            .checkin h2 {
                 font-size: 34px;
             }
 
@@ -286,16 +416,32 @@
 
 <body>
 
+    <!-- NAVIGATION -->
+
     <nav>
-        <div class="logo">EPS Wellness</div>
+
+        <div class="logo">
+            EPS Wellness
+        </div>
 
         <div>
-            <a href="#features">Explore</a>
+
+            <a href="#checkin">Check-In</a>
+
+            <a href="#features">Wellness</a>
+
             <a href="#how">How It Works</a>
-            <a href="#features">Health</a>
-            <a href="#checkin" class="nav-button">Get Started</a>
+
+            <a href="#checkin" class="nav-button">
+                Get Started
+            </a>
+
         </div>
+
     </nav>
+
+
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -309,55 +455,217 @@
 
             <p>
                 EPS Wellness helps you check in with yourself,
-                build healthy habits, and stay on track —
-                all in one place.
+                build healthy habits, and take small steps toward
+                feeling your best.
             </p>
 
             <a href="#checkin" class="main-button">
-                Get Started →
+                Start a Check-In →
             </a>
 
         </div>
 
         <div class="hero-card">
-            <div class="heart">💚</div>
+
+            <div class="heart">
+                💚
+            </div>
+
         </div>
 
     </section>
+
+
+    <!-- CHECK-IN -->
 
     <section class="checkin" id="checkin">
 
-        <h2>How are you feeling today?</h2>
+        <div class="checkin-container">
 
-        <p>Take a moment to check in with yourself.</p>
 
-        <div class="mood-options">
+            <!-- STEP 1 -->
 
-            <button onclick="selectMood('Great! 😊')">
-                😊
-                <span>Great</span>
-            </button>
+            <div id="step1" class="checkin-step">
 
-            <button onclick="selectMood('Good! 🙂')">
-                🙂
-                <span>Good</span>
-            </button>
+                <div class="step-label">
+                    Step 1 of 3
+                </div>
 
-            <button onclick="selectMood('Okay 😐')">
-                😐
-                <span>Okay</span>
-            </button>
+                <h2>
+                    How are you feeling today?
+                </h2>
 
-            <button onclick="selectMood('Not great 😕')">
-                😕
-                <span>Not great</span>
-            </button>
+                <p class="checkin-subtitle">
+                    There is no right or wrong answer.
+                    Just choose what feels closest to how you're feeling.
+                </p>
+
+                <div class="mood-options">
+
+                    <button class="mood-button" onclick="chooseMood('Great 😊')">
+                        😊
+                        <span>Great</span>
+                    </button>
+
+                    <button class="mood-button" onclick="chooseMood('Good 🙂')">
+                        🙂
+                        <span>Good</span>
+                    </button>
+
+                    <button class="mood-button" onclick="chooseMood('Okay 😐')">
+                        😐
+                        <span>Okay</span>
+                    </button>
+
+                    <button class="mood-button" onclick="chooseMood('Not great 😕')">
+                        😕
+                        <span>Not great</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 2 -->
+
+            <div id="step2" class="checkin-step">
+
+                <div class="step-label">
+                    Step 2 of 3
+                </div>
+
+                <h2>
+                    What's affecting how you feel?
+                </h2>
+
+                <p class="checkin-subtitle">
+                    Choose the option that fits best.
+                </p>
+
+                <div class="reason-options">
+
+                    <button class="reason-button" onclick="chooseReason('School')">
+                        🏫 School
+                    </button>
+
+                    <button class="reason-button" onclick="chooseReason('Family')">
+                        👨‍👩‍👧 Family
+                    </button>
+
+                    <button class="reason-button" onclick="chooseReason('Friends')">
+                        🧑‍🤝‍🧑 Friends
+                    </button>
+
+                    <button class="reason-button" onclick="chooseReason('Activities')">
+                        🎨 Activities
+                    </button>
+
+                    <button class="reason-button" onclick="chooseReason('Sleep')">
+                        😴 Sleep
+                    </button>
+
+                    <button class="reason-button" onclick="chooseReason('Stress')">
+                        🧠 Stress
+                    </button>
+
+                    <button class="reason-button" onclick="chooseReason('Something else')">
+                        ✨ Something else
+                    </button>
+
+                    <button class="reason-button" onclick="chooseReason('Not sure')">
+                        🤷 Not sure
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 3 -->
+
+            <div id="step3" class="checkin-step">
+
+                <div class="step-label">
+                    Step 3 of 3
+                </div>
+
+                <h2>
+                    What could help right now?
+                </h2>
+
+                <p class="checkin-subtitle">
+                    Pick something that sounds helpful to you.
+                </p>
+
+                <div class="help-options">
+
+                    <button class="help-button"
+                        onclick="finishCheckin('Take a short break 🌿')">
+                        🌿 Take a short break
+                    </button>
+
+                    <button class="help-button"
+                        onclick="finishCheckin('Take a few slow breaths 🌬️')">
+                        🌬️ Take a few slow breaths
+                    </button>
+
+                    <button class="help-button"
+                        onclick="finishCheckin('Write down what is on my mind ✍️')">
+                        ✍️ Write down what's on my mind
+                    </button>
+
+                    <button class="help-button"
+                        onclick="finishCheckin('Talk to someone I trust 💚')">
+                        💚 Talk to someone I trust
+                    </button>
+
+                    <button class="help-button"
+                        onclick="finishCheckin('Break one task into smaller steps 🎯')">
+                        🎯 Break one task into smaller steps
+                    </button>
+
+                    <button class="help-button"
+                        onclick="finishCheckin('Do something calming ✨')">
+                        ✨ Do something calming
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESULTS -->
+
+            <div id="checkin-result" class="checkin-step">
+
+                <div class="summary-card">
+
+                    <div class="step-label">
+                        Your Check-In
+                    </div>
+
+                    <h2>
+                        Thanks for checking in. 💚
+                    </h2>
+
+                    <p id="summary" class="summary-text"></p>
+
+                    <button class="continue-button"
+                        onclick="restartCheckin()">
+                        Check In Again
+                    </button>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <p id="mood-result"></p>
-
     </section>
+
+
+    <!-- WELLNESS AREAS -->
 
     <section class="features" id="features">
 
@@ -368,38 +676,66 @@
         <div class="cards">
 
             <div class="card">
-                <div class="card-icon">🧠</div>
-                <h3>Mental Wellness</h3>
+
+                <div class="card-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Mental Wellness
+                </h3>
+
                 <p>
-                    Check in with how you're feeling
-                    and learn healthy ways to take care
-                    of your mind.
+                    Check in with your emotions and
+                    learn simple ways to support your
+                    everyday well-being.
                 </p>
+
             </div>
 
-            <div class="card">
-                <div class="card-icon">🌱</div>
-                <h3>Physical Wellness</h3>
-                <p>
-                    Create healthy routines and focus
-                    on everyday habits that support
-                    your well-being.
-                </p>
-            </div>
 
             <div class="card">
-                <div class="card-icon">🎯</div>
-                <h3>Your Goals</h3>
+
+                <div class="card-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Physical Wellness
+                </h3>
+
                 <p>
-                    Set personal goals, track your
-                    progress, and celebrate small
-                    steps along the way.
+                    Build healthy routines around
+                    everyday habits like sleep,
+                    movement, and rest.
                 </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Your Goals
+                </h3>
+
+                <p>
+                    Set personal goals and keep track
+                    of the small steps you take toward them.
+                </p>
+
             </div>
 
         </div>
 
     </section>
+
+
+    <!-- HOW IT WORKS -->
 
     <section class="how" id="how">
 
@@ -410,32 +746,74 @@
         <div class="steps">
 
             <div>
-                <div class="step-number">01</div>
-                <h3>Check in</h3>
-                <p>Take a moment to see how you're doing today.</p>
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Check in
+                </h3>
+
+                <p>
+                    Take a moment to notice how
+                    you're feeling today.
+                </p>
+
             </div>
 
-            <div>
-                <div class="step-number">02</div>
-                <h3>Set a goal</h3>
-                <p>Choose something you'd like to work on.</p>
-            </div>
 
             <div>
-                <div class="step-number">03</div>
-                <h3>Keep going</h3>
-                <p>Build small, healthy habits over time.</p>
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+                    Think about what might be
+                    affecting how you feel.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Take a step
+                </h3>
+
+                <p>
+                    Choose one small thing that
+                    could help.
+                </p>
+
             </div>
 
         </div>
 
     </section>
 
+
+    <!-- FINAL CTA -->
+
     <section class="cta">
 
-        <h2>Start taking care of you.</h2>
+        <h2>
+            Start taking care of you.
+        </h2>
 
-        <p>Small steps can make a difference.</p>
+        <p>
+            Small steps can make a difference.
+        </p>
 
         <a href="#checkin" class="cta-button">
             Start Your Check-In
@@ -443,11 +821,91 @@
 
     </section>
 
+
+    <!-- JAVASCRIPT -->
+
     <script>
-        function selectMood(mood) {
-            document.getElementById("mood-result").textContent =
-                "Thanks for checking in! You selected: " + mood;
+
+        let selectedMood = "";
+        let selectedReason = "";
+
+
+        function chooseMood(mood) {
+
+            selectedMood = mood;
+
+            document.getElementById("step1").style.display = "none";
+
+            document.getElementById("step2").style.display = "block";
+
+            window.scrollTo({
+                top: document.getElementById("checkin").offsetTop,
+                behavior: "smooth"
+            });
+
         }
+
+
+        function chooseReason(reason) {
+
+            selectedReason = reason;
+
+            document.getElementById("step2").style.display = "none";
+
+            document.getElementById("step3").style.display = "block";
+
+            window.scrollTo({
+                top: document.getElementById("checkin").offsetTop,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        function finishCheckin(help) {
+
+            document.getElementById("step3").style.display = "none";
+
+            document.getElementById("checkin-result").style.display = "block";
+
+            document.getElementById("summary").innerHTML =
+                "You said you're feeling <strong>" +
+                selectedMood +
+                "</strong>.<br><br>" +
+
+                "You selected <strong>" +
+                selectedReason +
+                "</strong> as something affecting you.<br><br>" +
+
+                "One thing you thought might help is " +
+                "<strong>" +
+                help +
+                "</strong>.";
+
+            window.scrollTo({
+                top: document.getElementById("checkin").offsetTop,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        function restartCheckin() {
+
+            selectedMood = "";
+            selectedReason = "";
+
+            document.getElementById("checkin-result").style.display = "none";
+
+            document.getElementById("step1").style.display = "block";
+
+            window.scrollTo({
+                top: document.getElementById("checkin").offsetTop,
+                behavior: "smooth"
+            });
+
+        }
+
     </script>
 
 </body>
