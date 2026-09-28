@@ -5,7 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>EPwellness</title>  
+/* Daily Check-In */
 
+.checkin {
+    padding: 90px 7%;
+    text-align: center;
+    background: #f2f7f4;
+}
+
+.checkin h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.checkin > p {
+    color: #66776f;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.mood-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.mood-options button {
+    width: 140px;
+    height: 140px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    font-size: 45px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.mood-options button:hover {
+    transform: translateY(-5px);
+}
+
+.mood-options span {
+    display: block;
+    font-size: 16px;
+    color: #365247;
+    margin-top: 8px;
+}
+
+#mood-result {
+    margin-top: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #174c38;
+}
     <style>
         * {
             box-sizing: border-box;
@@ -282,7 +335,40 @@
 
     </section>
 
+<!-- Daily Check-In -->
+<section class="checkin" id="checkin">
 
+    <h2>How are you feeling today?</h2>
+
+    <p>Take a moment to check in with yourself.</p>
+
+    <div class="mood-options">
+
+        <button onclick="selectMood('Great! 😊')">
+            😊
+            <span>Great</span>
+        </button>
+
+        <button onclick="selectMood('Good! 🙂')">
+            🙂
+            <span>Good</span>
+        </button>
+
+        <button onclick="selectMood('Okay 😐')">
+            😐
+            <span>Okay</span>
+        </button>
+
+        <button onclick="selectMood('Not great 😕')">
+            😕
+            <span>Not great</span>
+        </button>
+
+    </div>
+
+    <p id="mood-result"></p>
+
+</section>
     <!-- Features -->
     <section class="features" id="features">
 
@@ -394,6 +480,13 @@
         </a>
 
     </section>
+
+<script>
+    function selectMood(mood) {
+        document.getElementById("mood-result").textContent =
+            "Thanks for checking in! You selected: " + mood;
+    }
+</script>
 
 </body>
 </html>
